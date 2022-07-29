@@ -1,0 +1,44 @@
+body{
+/* background-color: rgba(0, 36, 52, 1); */
+
+}
+
+
+/* other colors to use:
+color:#E9C9DC
+#FA5C35
+#A4AC8C
+#A4AC84 */
+
+nav {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.HomePage {
+  /* background-image: URL('../src/assets/cool-background.png');
+/* background-position: center center; */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+  /* border: 1vw inset #D4D2AA; */
+  width: 80%;
+  margin: 2% 10%;
+
+}
+
+  h1 {
+    text-align: center;
+  }
