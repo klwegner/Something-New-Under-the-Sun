@@ -39,6 +39,101 @@ nav {
 
 }
 
+.HomePage img {
+  width:70%;
+  height: auto;
+  margin: 0 15%;
+}
+
   h1 {
     text-align: center;
+  }
+
+  .homePageButtons {
+    display: flex;
+    justify-content: space-evenly;
+
+  }
+
+  .homePageButtons button{
+   padding: 0.5vw 1vw;
+  }
+
+  .addCityPage {
+    display:flex;
+    flex-direction: column;
+   width:80%;
+   margin: 0 10%;
+
+  }
+
+  .addCityPage label{
+margin-right:2%;    
+text-align: left;
+font-size:2vw;
+  }
+
+/* for first input */
+  .addCityPage input{
+    width: 25%;
+    height: 2vw;
+    margin: 1vw 0;
+    font-size: 2vw;
+  } 
+
+  .addCityPage textarea {
+    margin: 1vw 0;
+    font-size: 2vw;
+  }
+
+  /* for second input:
+  .addCityPage input{
+    width: 25%;
+    height: 5vw;
+  } */
+
+  .addCityPage button{
+    margin-top: 2%;
+  }
+
+
+
+
+
+  .SignUpPage {
+    display:flex;
+    flex-direction: column;
+   width:80%;
+   margin: 0 10%;
+
+  }
+
+  .SignUpPage input{
+    width: 25%;
+    height: 2vw;
+    margin: 1vw 0;
+    font-size: 2vw;
+  } 
+
+  
+  .SignUpPage label{
+    margin-right:2%;    
+    text-align: left;
+    font-size:2vw;
+      }
+
+      .SignUpPage button{
+        margin-top: 2%;
+      }
+
+
+
+  .errorPage {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .errorPage img {
+width:50%;
+margin: 0 25%;
   }

@@ -2,7 +2,7 @@ function Navbar() {
     return(
         <nav>
         <div>
-        <h1>Something New</h1>
+        <h1>Under the Sun</h1>
         </div>
         <div className="navLinks">
             <a href="/signup">Sign Up</a>

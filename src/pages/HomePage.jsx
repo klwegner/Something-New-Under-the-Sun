@@ -1,14 +1,27 @@
 import logo from "../logo.svg";
 import "../App.css";
+import Earth from '../assets/earth.png';
 
 function HomePage() {
   return (
     <div className="HomePage">
-     <h2>Your Personal Travel To-Do List</h2>
-     <img src="../assets/earth.png" alt=""/>
-     <img src=".../src/assets/earth.png" alt=""/>
-<p>This will be the homepage</p>
-     <h3>Seize the month. The Week. The Day. The Moment.</h3>
+<h1>This will be the homepage</h1>
+   
+<div className="homePageButtons">
+
+  <button><a href='/profile/:userId/cities'>Your List of Cities</a></button>
+  <button><a href='/cities'>All Cities</a></button>
+  <button><a href="/randomCity">Travel Inspo</a></button>
+  <button><a href="/addCity">Add a City</a></button>
+  <button><a href="/addDestination">Add a Destination</a></button>
+</div>
+     <img src={Earth} alt="earth icon"/>
+
+
+
+
+
+     <h3>Seize the Month. The Week. The Day. The Moment.</h3>
 
 
 
