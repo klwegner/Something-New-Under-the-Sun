@@ -1,10 +1,11 @@
+import { useState, useContext } from "react";
 import axios from "axios";
-import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://localhost:5005";
 
-function AddDestionationPage() {
+function AddDestinationPage() {
 
 const [name, setName] = useState('');
 const [description, setDescription] = useState('');
@@ -13,88 +14,67 @@ const [address, setAddress] = useState('');
 const [destinationType, setDestinationType] = useState(null);
 const [errorMessage, setErrorMessage] = useState(undefined);
 
-const Navigate = useNavigate();
-
-const [destinationFormState, setDestinationFormState] = useState({
-
-name: '',
-description:'',
-city:'',
-address:'',
-destinationType: null,
-
-})
+const navigate = useNavigate();
 
 const [message, setMessage] =useState(null);
 
-const updateDestinationFormState = (event) =>
-setDestinationFormState({
-    ...destinationFormState,
-      //what does below do?
-    [event.currentTarget.name]: event.currentTarget.value,
-});
+const handleName = (e) => setName(e.target.value);
+const handleDescription = (e) => setDescription(e.target.value);
+const handleCity = (e) => setCity(e.target.value);
+const handleAddress = (e) => setAddress(e.target.value);
+const handleDestinationType = (e) => setDestinationType(e.target.value);
 
-
-//help!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-const handleSubmitDestionation = event => {
+const handleSubmitDestination = event => {
     event.preventDefault();
 
-    const requestBody={
-        ...destinationFormState
-    }
+    const requestBody={ name, description, city, address, destinationType }
 
-    //how to submit city to database rather than API????
-
-
-//     axios.post('https://ih-beers-api2.herokuapp.com/beers/new', requestBody)
-// .then((response)=> {
-//     setBeerFormState(response.data.message)
-//     setBeerFormState({
-//         name: "",
-//         tagline: "",
-//         description: "",
-//         first_brewed: "",
-//         brewers_tips: "",
-//         attenuation_level: "",
-//         contributed_by: "",
-//       });
-//     }) //check
-// .catch(err => {console.log(err.response.data.message)
-// setMessage(err.response.data.message)
-//     });
-}
+    axios.post(`${API_URL}/api/addDestination`, requestBody, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}`}
+})
+.then((response) =>{
+    //I want to navigate to the individual city page and show all destinations in that city
+    navigate('/cities')
+})
+.catch((err) => setMessage(err.response.data.message))
 
 
 return(
     <div className="addCityPage">
     <h1>Add a Destination</h1>
-    <form onSubmit={handleSubmitDestionation}>
+    <form onSubmit={handleSubmitDestination}>
     <div>
 <label>Name</label>
-<input type="text" name="name" value={destinationFormState.name} onChange={updateDestinationFormState} />
+<input type="text" name="name" value={name} onChange={handleName} />
 </div>
 
 <div> 
 <label>Description</label>
-<textarea type="text" name="description" value={destinationFormState.description} onChange={updateDestinationFormState} rows="4" cols="33"></textarea>
+<textarea type="text" name="description" value={description} onChange={handleDescription} rows="4" cols="33"></textarea>
 </div>
 
 <div> 
 <label>City</label>
-<input type="text" name="city" value={destinationFormState.city} onChange={updateDestinationFormState} />
+<input type="text" name="city" value={city} onChange={handleCity} />
 </div>
 
 <div> 
 <label>Address (optional)</label>
-<input type="text" name="address" value={destinationFormState.address} onChange={updateDestinationFormState} />
+<input type="text" name="address" value={address} onChange={handleAddress} />
 </div>
+
+
+
+
+
+
+{/* how to handle submit of this data? */}
 
 <div> 
 <label>Category of Destination</label>
-{/* <input type="radio" name="type" value={destinationFormState.type} onChange={updateDestinationFormState} /> */}
 <p>Please select your destination type:</p>
+{/* will the below work */}
+<input type="radio" name="type" value={destinationType} onChange={handleDestinationType} />
  <input type="radio" id="naturalWorld" name="destinationType" value="naturalWorld"></input>
  <label for="naturalWorld">Natural World</label><br></br>
  <input type="radio" id="history" name="destinationType" value="history"></input>
@@ -122,5 +102,5 @@ return(
     </div>
 )
 }
-
-export default AddDestionationPage;
+}
+export default AddDestinationPage;

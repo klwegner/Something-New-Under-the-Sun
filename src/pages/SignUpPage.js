@@ -22,7 +22,7 @@ const handlePassword = (e) => setPassword(e.target.value);
 const handleSignupSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { name, username, email, password };
+    const requestBody = { username, email, password };
 
     axios.post(`${API_URL}/auth/signup`, requestBody)
     .then((response) =>{
@@ -40,11 +40,6 @@ const handleSignupSubmit = (e) => {
         <div className="SignUpPage">
     <h1>Sign Up</h1>
     <form onSubmit={handleSignupSubmit}>
-    <div>
-<label>Your Name</label>
-<input type ="text" name="name" value={name} onChange={handleName} />
-</div>
-
 <div>
 <label>Username</label>
 <input type ="text" name="username" value={username} onChange={handleUsername} />

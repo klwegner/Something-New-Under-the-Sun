@@ -1,85 +1,78 @@
-import { useState } from 'react';
+import { useState, useContext } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
+
+const API_URL = "http://localhost:5005";
 
 function LogInPage() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState(undefined);
 
+  const navigate = useNavigate();
 
-    const [loginFormState, setLoginFormState] = useState({
-        
-        username:'',
-        password:''
-            })
-        
-            const [message, setMessage] = useState(null);
-        
-            const updateLoginFormState = (event) =>
-            setLoginFormState({
-                ...loginFormState,
-               
-               //what does below do?
-                [event.currentTarget.name]: event.currentTarget.value
-            });
-        
-        //help!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        
-        
-        const handleSubmitLogin = event => {
-            event.preventDefault();
-        
-            const requestBody={
-                ...loginFormState
-            }
-        
-            //how to submit city to database rather than API????
-        
-        //     axios.post('https://ih-beers-api2.herokuapp.com/beers/new', requestBody)
-        // .then((response)=> {
-        //     setBeerFormState(response.data.message)
-        //     setBeerFormState({
-        //         name: "",
-        //         tagline: "",
-        //         description: "",
-        //         first_brewed: "",
-        //         brewers_tips: "",
-        //         attenuation_level: "",
-        //         contributed_by: "",
-        //       });
-        //     }) //check
-        // .catch(err => {console.log(err.response.data.message)
-        // setMessage(err.response.data.message)
-        //     });
-        }
-        
-            return(
-               
-        
-                <div className="SignUpPage">
-            <h1>Login</h1>
-            <form onSubmit={handleSubmitLogin}>
-        
-        
-            <div>
-        <label>Username</label>
-        <input type ="text" name="username" value={loginFormState.username} onChange={updateLoginFormState} />
+  const { storeToken, authenticateUser } = useContext(AuthContext);
+
+  const handleUsername = (e) => setUsername(e.target.value);
+  const handlePassword = (e) => setPassword(e.target.value);
+
+  const handleSubmitLogin = (e) => {
+    e.preventDefault();
+    const requestBody = { username, password };
+
+    axios
+      .post(`${API_URL}/auth/login`, requestBody)
+      .then((response) => {
+        console.log("JWT token", response.data.authToken);
+        storeToken(response.data.authToken);
+        authenticateUser();       
+        navigate("/profile/:userId");
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setMessage(errorDescription);
+      });
+  };
+
+  return (
+    <div className="SignUpPage">
+      <h1>Login</h1>
+      <form onSubmit={handleSubmitLogin}>
+        <div>
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleUsername}
+          />
         </div>
 
         <div>
-        <label>Password</label>
-        <input type ="text" name="password" value={loginFormState.password} onChange={updateLoginFormState} />
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          />
         </div>
-        
-        
-        {message && (
-                  <div>
-                    <p>{message}</p>
-                  </div>
-                  )}
-        
-                  <div>
-                  <button type="submit">Submit</button>
+
+        <div>
+          <button type="submit">Submit</button>
         </div>
-            </form>
-            </div>
-        )
+      </form>
+      {message && (
+        <div>
+          <p>{message}</p>
+        </div>
+      )}
+
+      <p>Don't an account yet?</p>
+      <Link to={"/signup"}> Sign Up</Link>
+    </div>
+  );
 }
 
 export default LogInPage;
