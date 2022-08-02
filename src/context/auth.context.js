@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 const API_URL = "http://localhost:5005";
 
 const AuthContext = React.createContext();
@@ -14,7 +15,7 @@ function AuthProviderWrapper(props) {
         localStorage.setItem('authToken', token);
       }
 
-
+      const storedToken = localStorage.getItem('authToken');
 
 
       const authenticateUser = () => { 
@@ -51,24 +52,35 @@ function AuthProviderWrapper(props) {
         }   
       }
      
-      
+
+      const removeToken = () => {                    // <== ADD
+        // Upon logout, remove the token from the localStorage
+        localStorage.removeItem("authToken");
+      }
+     
+     
+      const logOutUser = () => {               
+        console.log('logging out?')  
+        // To log out the user, remove the token
+        removeToken();
+        // and update the state variables    
+        authenticateUser();
+      }  
+
       useEffect(() => {                                    
         authenticateUser();        
        }, []);
 
-
-
-
-
-
     return (
       <AuthContext.Provider 
       value={{ 
+        storedToken,
         isLoggedIn,
         isLoading,
         user,
         storeToken,
-        authenticateUser     
+        authenticateUser,
+        logOutUser     
       }}
     >
       {props.children}

@@ -8,19 +8,16 @@ function Navbar() {
 
     return(
         <nav>
-        <div>
-        <h1>Under the Sun</h1>
-        </div>
+
         <div className="navLinks">
             <Link to='/'><button>Home</button></Link>
-            <Link to='/error'>Error</Link>
+            <Link to='/error'><button>Error</button></Link>
 
 
             {isLoggedIn && (
         <>
             <Link to='/Profile/:profileId'><button>Your Profile</button></Link>   
             <button onClick={logOutUser}>Log Out</button>
-            <span>{user && user.name}</span>
         </>
         )}
 

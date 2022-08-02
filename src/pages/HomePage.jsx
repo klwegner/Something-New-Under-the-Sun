@@ -5,7 +5,9 @@ import Earth from '../assets/earth.png';
 function HomePage() {
   return (
     <div className="HomePage">
-<h1>This will be the homepage</h1>
+        <div>
+        <h1>Under the Sun</h1>
+        </div>
    
 <div className="homePageButtons">
 

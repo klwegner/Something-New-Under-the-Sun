@@ -30,8 +30,7 @@ function LogInPage() {
         navigate("/profile/:userId");
       })
       .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setMessage(errorDescription);
+        setMessage(error.response.data.message);
       });
   };
 

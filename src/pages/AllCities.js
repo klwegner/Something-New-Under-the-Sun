@@ -1,31 +1,21 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import CitySearchBar from '../components/CitySearchBar';
 const API_URL = "http://localhost:5005";
 
 
 function AllCities(props) {
-    // const [cities, setCities] = useState([]);
+  
     const { cities } = props;
     console.log(props);
-    
-    // useEffect(()=>{
-        
-    //     const storedToken = localStorage.getItem("authToken");
-
-    //     axios.get(
-    //     `${API_URL}/api/cities`,
-    //     { headers: { Authorization: `Bearer ${storedToken}` } }
-    //   )
-    //     .then((response) => setCities(response.data))
-    //     .catch((error) => console.log(error));
-    // }, [])
 
 
     return(
         <div className='allCities'>
         <h1>All Cities Added</h1>
 
+<CitySearchBar />
 
         {cities && (
 
@@ -33,8 +23,11 @@ function AllCities(props) {
         {cities.map((city)=>{
             return (
         <div key={city._id} className='oneCity'>
-        <Link to={`${city._id}`}><h3>{city.name}</h3></Link>
+        <ul>
+        <li><Link to={`${city._id}`}><h3>{city.name}</h3></Link></li>
         <h4>{city.description}</h4>
+
+        </ul>
         </div>
             )
         })}

@@ -17,18 +17,22 @@ import CityInfo from "./pages/CityInfo";
 import AllCities from "./pages/AllCities";
 import HomePageWithNavigate from "./pages/HomePageWithNavigate";
 import IsPrivate from "./components/IsPrivate";
+import EditCity from "./pages/EditCity";
+import EditDestination from "./pages/EditDestination";
+import MyMapComponent from "./components/MyMapComponent";
+import ErrorComponent from "./components/ErrorComponent";
+import Loading from "./components/Loading";
+
 const API_URL = "http://localhost:5005";
 
-// how to get info from database to pass as props for cities/destinations??????????????
 
 function App() {
 
   const [cities, setCities] = useState(null);
 
-  useEffect(()=>{
-        
+  function getAllCities() {
     const storedToken = localStorage.getItem("authToken");
-
+  
     axios.get(
     `${API_URL}/api/cities`,
     { headers: { Authorization: `Bearer ${storedToken}` } }
@@ -37,14 +41,10 @@ function App() {
       console.log(response)
       setCities(response.data)})
     .catch((error) => console.log(error));
+  }
+  useEffect(()=>{
+        getAllCities();
 }, [])
-
-
-
-
-
-
-
 
   return (
     <div className="App">
@@ -62,6 +62,8 @@ function App() {
        <Route path='/profile/:userId/cities' element={<IsPrivate><YourCities cities={cities}/></IsPrivate>}/>
        <Route path='/cities/:cityId' element={<CityInfo cities={cities}/>}/>
        <Route path='/cities' element={<AllCities cities={cities}/>}/>
+       <Route path='/destination/:destinationId' element={<IsPrivate><EditDestination cities={cities}/></IsPrivate>}/>
+       <Route path='/cities/:cityId/edit' element={<IsPrivate><EditCity refreshCities={getAllCities} cities={cities}/></IsPrivate>}/>
       </Routes>
     </div>
   );

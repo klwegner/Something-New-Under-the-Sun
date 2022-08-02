@@ -1,32 +1,31 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { GoogleMap } from "@react-google-maps/api";
+import { useEffect, useState } from "react";
+import MyMapComponent from "../components/MyMapComponent";
 
-const API_URL = "http://localhost:5005";
+function RandomCity(props) {
+  const [randoCity, setRandoCity] = useState(null);
 
+  useEffect(()=>{
+      if(props.cities) {
+    setRandoCity(props.cities[Math.floor(Math.random() * props.cities.length)])
+           }
+    
+}, [props.cities])
 
-function RandomCity() {
-const [randoCity, setRandoCity] = useState(null);
+  return (
+    <>
+        <h1>A Random City</h1>
 
-
-useEffect(()=>{
-axios.get(API_URL)
-.then((response) => setRandoCity(response))
-.catch((err) => console.log(err))
-
-
-}, []);
-
-
-
-return(
-    <div>
-    <h1>A Random City</h1>
-    <h1>{randoCity.name}</h1>
-    <h2>{randoCity.location}</h2>
-    <h2>{randoCity.description}</h2>
-    <h2> User Destinations:</h2>
-    <h4>See more interesting things in {randoCity.name} from Atlas Obscura here:</h4>
-    </div>
-)
+      {randoCity && (
+        <div className="cityDetails">
+          <h3>{randoCity.name}</h3>
+          <h4>{randoCity.description}</h4>
+          <MyMapComponent/>
+          <h4> Recommendations for destinations in {randoCity.name} by Atlas Obscura:</h4>
+        </div>
+      )}
+    </>
+  );
 }
+
 export default RandomCity;

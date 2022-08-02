@@ -1,6 +1,5 @@
 body{
 /* background-color: rgba(0, 36, 52, 1); */
-
 }
 
 
@@ -14,6 +13,7 @@ nav {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
+  padding: 1% 0;
 }
 
 .navLinks {
@@ -40,9 +40,9 @@ nav {
 }
 
 .HomePage img {
-  width:70%;
+  width:40%;
   height: auto;
-  margin: 0 15%;
+  margin: 0 30%;
 }
 
   h1 {
@@ -81,6 +81,15 @@ font-size:2vw;
     font-size: 2vw;
   } 
 
+  .addCityPage select{
+    width: 7%;
+    height: 2vw;
+    margin: 1vw 0;
+    font-size: 1.8vw;
+    /* text-align:center; */
+  } 
+
+
   .addCityPage textarea {
     margin: 1vw 0;
     font-size: 2vw;
@@ -93,7 +102,9 @@ font-size:2vw;
   } */
 
   .addCityPage button{
-    margin-top: 2%;
+    padding: 0.5vw 1vw;
+    width:10%;
+    margin:2% 45%;
   }
 
 
@@ -136,4 +147,43 @@ font-size:2vw;
   .errorPage img {
 width:50%;
 margin: 0 25%;
+  }
+
+  .allCities {
+    width: 80%;
+    margin: 2% 10%;
+    justify-content: center;
+  }
+
+  .cityDetails {
+    width:80%;
+    margin: 2% 10%;
+    display:flex;
+    flex-direction: column;
+  }
+
+  .cityDetails button{
+    padding: 0.5vw 1vw;
+    width:10%;
+    margin:2% 45%;
+  }
+
+  .googleMap {
+    width: 50%;
+    height: 500px;
+    margin: 2% 25%;
+    border-bottom: 1px solid black;
+  }
+
+  .userProfile {
+
+  display:flex;
+  width: 80%;
+  margin: 2% 10%;
+
+  }
+
+  .userProfileRight {
+    display:flex;
+    flex-direction: column;
   }

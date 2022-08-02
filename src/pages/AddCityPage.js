@@ -20,6 +20,7 @@ const handleName = (e) => setName(e.target.value);
 const handleDescription = (e) => setDescription(e.target.value);
 const handleLocation = (e) => setLocation(e.target.value);
 
+
 const handleSubmitCity = event => {
     event.preventDefault();
 const requestBody = { name, description, location }
