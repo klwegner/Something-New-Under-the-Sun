@@ -68,7 +68,7 @@ function LogInPage() {
         </div>
       )}
 
-      <p>Don't an account yet?</p>
+      <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
     </div>
   );

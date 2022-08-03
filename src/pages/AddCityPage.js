@@ -1,88 +1,94 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
+import { useNavigate } from "react-router-dom";
+// import { AuthContext } from "../context/auth.context";
+import City from "../assets/icons/001-cityscape.png";
 
 const API_URL = "http://localhost:5005";
 
-
 function AddCityPage(props) {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [message, setMessage] = useState(null);
 
-const [name, setName] = useState('');
-const [description, setDescription] = useState('');
-const [location, setLocation] = useState('');
-const [message, setMessage] =useState(null);
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
+  const handleName = (e) => setName(e.target.value);
+  const handleDescription = (e) => setDescription(e.target.value);
+  const handleLocation = (e) => setLocation(e.target.value);
 
-
-const handleName = (e) => setName(e.target.value);
-const handleDescription = (e) => setDescription(e.target.value);
-const handleLocation = (e) => setLocation(e.target.value);
-
-
-const handleSubmitCity = event => {
+  const handleSubmitCity = (event) => {
     event.preventDefault();
-const requestBody = { name, description, location }
+    const requestBody = { name, description, location };
 
-
-axios.post(`${API_URL}/api/addCity`, requestBody, {
-
-    //lets request get auth token from local storage
-headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}`}
-})
-    .then((response) =>{
-        console.log(response.data)
+    axios
+      .post(`${API_URL}/api/addCity`, requestBody, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
         props.refreshCities();
-        navigate('/cities');
-    })
-    .catch((err) => setMessage(err.response.data.message))
-}
+        navigate("/cities");
+      })
+      .catch((err) => setMessage(err.response.data.message));
+  };
 
-return(
-    <div className="addCityPage">
-    <h1>Add a City</h1>
-    <form onSubmit={handleSubmitCity}>
-    <div>
-<label> Name</label>
-<input type ="text" name="name" value={name} onChange={handleName} />
-</div>
+  return (
+    <>
+      <h1 className="noBackground">Add a City</h1>
+      <div className="basicAdd2">
+        <div className="addCityPage">
+          <form onSubmit={handleSubmitCity}>
+            <div>
+              <label> Name</label>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleName}
+              />
+            </div>
 
-<div> 
-<label> Location</label>
-<input type="text" name="location" value={location} onChange={handleLocation} />
-</div>
+            <div>
+              <label> Location</label>
+              <input
+                type="text"
+                name="location"
+                value={location}
+                onChange={handleLocation}
+              />
+            </div>
 
-<div> 
-<label> Description</label>
-<textarea type="text" name="description" value={description} onChange={handleDescription} rows="4" cols="33"></textarea>
-</div>
+            <div>
+              <label> Description</label>
+              <textarea
+                type="text"
+                name="description"
+                value={description}
+                onChange={handleDescription}
+                rows="4"
+                cols="33"
+              ></textarea>
+            </div>
 
-{message && (
-          <div>
-            <p>{message}</p>
-          </div>
-          )}
+            {message && (
+              <div>
+                <p>{message}</p>
+              </div>
+            )}
 
-          <div>
-          <button type="submit">Submit</button>
-</div>
-
-
-
-
-
-
-    </form>
-
-
-
-
-
-
-
-    </div>
-)
+            <div>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <img src={City} alt=""></img>
+      </div>
+    </>
+  );
 }
 
 export default AddCityPage;

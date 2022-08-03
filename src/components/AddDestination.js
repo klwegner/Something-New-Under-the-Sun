@@ -61,24 +61,36 @@ return(
 </div>
 
 {/* how to handle submit of this data? */}
-
-<div> 
-<label>Category of Destination</label></div> <div>
+<>
+<label>Category of Destination</label>
 <p>Please select your destination type:</p>
+</>
+<div className='radio1'> 
 {/* will the below work */}
+
 {/* <input type="radio" name="type" value={destinationType} onChange={handleDestinationType} /> */}
-<input type="radio" id="naturalWorld" name="destinationType" value="naturalWorld"></input>
+{/* <input type="radio" id="naturalWorld" name="destinationType" value="naturalWorld"></input> */}
+<input type="radio" name="destinationType" value="naturalWorld"></input>
 <label for="naturalWorld">Natural World</label><br></br>
-<input type="radio" id="history" name="destinationType" value="history"></input>
+{/* <input type="radio" id="history" name="destinationType" value="history"></input> */}
+<input type="radio" name="destinationType" value="history"></input>
 <label for="history">History</label><br></br>
-<input type="radio" id="nightlife" name="destinationType" value="nightlife"></input>
+{/* <input type="radio" id="nightlife" name="destinationType" value="nightlife"></input> */}
+<input type="radio" name="destinationType" value="nightlife"></input>
+
 <label for="nightlife">Nightlife</label><br></br>
-<input type="radio" id="architecture" name="destinationType" value="architecture"></input>
+{/* <input type="radio" id="architecture" name="destinationType" value="architecture"></input> */}
+<input type="radio" name="destinationType" value="architecture"></input>
+
 <label for='architecture'>Architecture</label><br></br>
-<input type="radio" id='fun' name="destinationType" value='fun'></input>
+<input type="radio" name="destinationType" value='fun'></input>
+{/* <input type="radio" id='fun' name="destinationType" value='fun'></input> */}
+
 <label for='fun'>Fun Stuff</label><br></br>
-<input type='radio' id='other' name='destinationType' value='other'></input>
-<label for='other'> Other</label>
+{/* <input type='radio' id='other' name='destinationType' value='other'></input> */}
+<input type='radio' name='destinationType' value='other'></input>
+
+<label for='other'>Other</label>
 </div>
 
 {message && (
@@ -87,9 +99,13 @@ return(
           </div>
           )}
 
-          <div>
           <button type="submit">Submit</button>
-</div>
+
+
+{/* <div>
+          <button type="submit">Submit</button>
+</div> */}
+
     </form>
     </div>
 )
