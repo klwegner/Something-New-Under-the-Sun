@@ -82,6 +82,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 2vw;
 }
 .leftSide {
   display: flex;
@@ -131,7 +132,7 @@ nav img {
 .titleDiv {
 display:flex;
 width:100%;
-height:10vw;
+height:8vw;
 margin: 0;
 align-items: center;
 justify-content: center;
@@ -141,7 +142,7 @@ background-color: #BE8C63;
 .titleDiv h1{
   text-shadow: -1px 0 #E4D1B9, 0 1px #E4D1B9, 1px 0 #A97155, 0 -1px #A97155;
 margin:0;
-font-size: 8vw;
+font-size: 7vw;
 text-align: center;
 background-color: #BE8C63;
 }
@@ -160,18 +161,19 @@ background-color: #BE8C63;
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin: 2% 0;
+  margin: 1% 0;
   position:relative;
 }
 
 .HomePage h1{
   background-color: #8FBDD3;
+  margin:0;
 }
 
 .HomePage img {
   width: 20%;
   height: auto;
-  margin: 2% 40% 0;
+  margin: 1% 40%;
   z-index: 10;
 }
 
@@ -219,13 +221,13 @@ button {
   flex-direction: column;
   align-items:center;
   text-decoration: none;
-  font-size:2vw;
+  font-size:1.5vw;
   color:black;
   font-family: "Reenie Beanie", cursive;
 }
 
 .homePageButtons1 img {
-  width: 125px;
+  width: 75px;
   margin: 0 10%;
   padding:0;
 }
