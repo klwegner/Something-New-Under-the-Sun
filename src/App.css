@@ -6,6 +6,7 @@ h1 {
   text-align: center;
   /* font-family: 'Pacifico', cursive; */
   font-family: "Reenie Beanie", cursive;
+  background-color: #E4D1B9;
 }
 
 a,
@@ -68,6 +69,7 @@ nav {
 nav h1 {
   font-size: 5vw;
   margin: 1% 0;
+  background-color: #be8c63;
 }
 
 nav img {
@@ -98,15 +100,22 @@ nav img {
   margin: 2% 0;
 }
 
+
+.HomePage h1{
+  background-color: #8FBDD3;
+}
+
 .HomePage img {
-  width: 30%;
+  width: 20%;
   height: auto;
-  margin: 0 35% 0;
+  margin: 2% 40% 0;
 }
 
 .homePageButtons {
   display: flex;
   justify-content: space-evenly;
+  background-color: #E4D1B9;
+
 }
 
 .homePageButtons button {
@@ -123,10 +132,10 @@ nav img {
   margin-top:2%;
 }
 
-.homePageButtons button a {
+.homePageButtons a {
   text-decoration: none;
   font-size:2vw;
-  color:#A97155;
+  color:black;
 }
 
 .addCityPage {
@@ -373,15 +382,18 @@ nav button {
     margin: 2% 5%;
   }
 
+
   .homePageButtons2 button {
     width: 25vw;
     height: 10vw;
     border-radius: 10px;
+    background-color: #E4D1B9;
   }
 
   .homePageButtons2 a {
     text-decoration: none;
     font-size: 3vw;
+    color:black;
   }
 
   nav button {
@@ -435,6 +447,13 @@ nav button {
         flex-direction: column;
         font-size: 4vw;
       }
+
+      .HomePage2 h3{
+        font-family: "Reenie Beanie", cursive;
+        font-size: 5vw;
+      }
+
+
 }
 
 /* On screens that are 600px or less, set the background color to olive */
@@ -478,6 +497,11 @@ nav button {
     width: 50%;
     margin: 0 25%;
   }
+  .HomePage2 h3{
+    font-family: "Reenie Beanie", cursive;
+    font-size: 11vw;
+    margin: 2%;
+  }
 
   .homePageButtons2 {
     display: flex;
@@ -491,11 +515,13 @@ nav button {
     width: 30vw;
     height: 15vw;
     border-radius: 10px;
+    background-color: #E4D1B9;
   }
 
   .homePageButtons2 a {
     text-decoration: none;
     font-size: 5vw;
+    color:black;
   }
 
   h3 {

@@ -11,20 +11,14 @@ function HomePage() {
   return (
 <>
     <div className="HomePage2">
-    {/* <div>
-        <h1>Under the Sun</h1>
-        </div> */}
-   
 <div className="homePageButtons2">
-
-  
   <button><a href='/cities'>All Cities</a></button>
   <button><a href="/randomCity">Travel Inspo</a></button>
 </div>
 
 <div>
      <img src={Earth} alt="earth icon"/>
-     <h3>Seize the Month. The Week. The Day. The Moment.</h3>
+     <h3>Seize the Month.<br></br> The Week. The Day. The Moment.</h3>
 </div>
 
 <div className="homePageButtons2">
