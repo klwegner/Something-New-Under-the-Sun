@@ -9,18 +9,22 @@ const API_URL = "http://localhost:5005";
 function AddCityPage(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [location, setLocation] = useState("");
+//   const [location, setLocation] = useState("");
+const [usState, setUsState] = useState("");
+const [country, setCountry] = useState("");
   const [message, setMessage] = useState(null);
 
   const navigate = useNavigate();
 
   const handleName = (e) => setName(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
-  const handleLocation = (e) => setLocation(e.target.value);
+//   const handleLocation = (e) => setLocation(e.target.value);
+  const handleUsState= (e) => setUsState(e.target.value);
+  const handleCountry = (e) => setCountry(e.target.value)
 
   const handleSubmitCity = (event) => {
     event.preventDefault();
-    const requestBody = { name, description, location };
+    const requestBody = { name, description, usState, country };
 
     axios
       .post(`${API_URL}/api/addCity`, requestBody, {
@@ -43,6 +47,8 @@ function AddCityPage(props) {
         <div className="addCityPage">
           <form onSubmit={handleSubmitCity}>
             <div>
+
+            
               <label> Name</label>
               <input
                 type="text"
@@ -52,13 +58,32 @@ function AddCityPage(props) {
               />
             </div>
 
-            <div>
+            {/* <div>
               <label> Location</label>
               <input
                 type="text"
                 name="location"
                 value={location}
                 onChange={handleLocation}
+              />
+            </div> */}
+            <div>
+              <label>State</label>
+              <input
+                type="text"
+                name="state"
+                value={usState}
+                onChange={handleUsState}
+              />
+            </div>
+
+            <div>
+              <label>Country</label>
+              <input
+                type="text"
+                name="country"
+                value={country}
+                onChange={handleCountry}
               />
             </div>
 

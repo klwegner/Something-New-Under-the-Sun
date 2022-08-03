@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://localhost:5005";
@@ -9,29 +9,28 @@ function AddDestination() {
 
 const [name, setName] = useState('');
 const [description, setDescription] = useState('');
-const [city, setCity] = useState('');
 const [address, setAddress] = useState('');
 const [destinationType, setDestinationType] = useState(null);
 const [message, setMessage] = useState(undefined);
 
-const navigate = useNavigate();
+const { cityId } = useParams();
 
+const navigate = useNavigate();
 const handleName = (e) => setName(e.target.value);
 const handleDescription = (e) => setDescription(e.target.value);
-const handleCity = (e) => setCity(e.target.value);
 const handleAddress = (e) => setAddress(e.target.value);
 const handleDestinationType = (e) => setDestinationType(e.target.value);
 
 const handleSubmitDestination = event => {
     event.preventDefault();
-
-    const requestBody={ name, description, city, address, destinationType }
+    const requestBody={ name, description, address, destinationType, cityId }
 
     axios.post(`${API_URL}/api/addDestination`, requestBody, {
         headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}`}
 })
 .then((response) =>{
-    //I want to navigate to the individual city page and show all destinations in that city
+  console.log(response.data)
+    //I want to navigate to the individual city page and show all destinations in that city if possible?
     navigate('/cities')
 })
 .catch((err) => setMessage(err.response.data.message))
@@ -39,7 +38,8 @@ const handleSubmitDestination = event => {
 
 return(
     <div className="addCityPage">
-    <form onSubmit={handleSubmitDestination}>
+    {/* <form onSubmit={handleSubmitDestination}> */}
+    <form>
     <div>
 <label>Name</label></div> <div>
 <input type="text" name="name" value={name} onChange={handleName} />
@@ -48,11 +48,6 @@ return(
 <div> 
 <label>Description</label></div> <div>
 <textarea type="text" name="description" value={description} onChange={handleDescription} rows="4" cols="33"></textarea>
-</div>
-
-<div> 
-<label>City</label></div> <div>
-<input type="text" name="city" value={city} onChange={handleCity} />
 </div>
 
 <div> 
@@ -70,20 +65,20 @@ return(
 
 {/* <input type="radio" name="type" value={destinationType} onChange={handleDestinationType} /> */}
 {/* <input type="radio" id="naturalWorld" name="destinationType" value="naturalWorld"></input> */}
-<input type="radio" name="destinationType" value="naturalWorld"></input>
+<input type="radio" name="destinationType" value="naturalWorld" onChange={handleDestinationType}></input>
 <label for="naturalWorld">Natural World</label><br></br>
 {/* <input type="radio" id="history" name="destinationType" value="history"></input> */}
-<input type="radio" name="destinationType" value="history"></input>
+<input type="radio" name="destinationType" value="history" onChange={handleDestinationType}></input>
 <label for="history">History</label><br></br>
 {/* <input type="radio" id="nightlife" name="destinationType" value="nightlife"></input> */}
-<input type="radio" name="destinationType" value="nightlife"></input>
+<input type="radio" name="destinationType" value="nightlife" onChange={handleDestinationType}></input>
 
 <label for="nightlife">Nightlife</label><br></br>
 {/* <input type="radio" id="architecture" name="destinationType" value="architecture"></input> */}
-<input type="radio" name="destinationType" value="architecture"></input>
+<input type="radio" name="destinationType" value="architecture" onChange={handleDestinationType}></input>
 
 <label for='architecture'>Architecture</label><br></br>
-<input type="radio" name="destinationType" value='fun'></input>
+<input type="radio" name="destinationType" value='fun' onChange={handleDestinationType}></input>
 {/* <input type="radio" id='fun' name="destinationType" value='fun'></input> */}
 
 <label for='fun'>Fun Stuff</label><br></br>
@@ -99,14 +94,8 @@ return(
           </div>
           )}
 
-          <button type="submit">Submit</button>
-
-
-{/* <div>
-          <button type="submit">Submit</button>
-</div> */}
-
     </form>
+          <button type="submit" onClick={handleSubmitDestination}>Submit</button>
     </div>
 )
 }

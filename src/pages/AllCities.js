@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 
 const { search } = window.location;
 const query = new URLSearchParams(search).get("s");
-const API_URL = "http://localhost:5005";
+
 
 function AllCities(props) {
   const { cities } = props;

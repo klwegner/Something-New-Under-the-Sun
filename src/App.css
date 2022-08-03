@@ -756,8 +756,13 @@ nav button {
         .basicAdd2 textarea {
           width: 80%;
         }
-      
-      
+        .footer{
+          display: none;
+        }
+
+        .aboutUsBar {
+          height: 4vw;
+        }
         
 
         
@@ -832,7 +837,7 @@ nav button {
 
   .homePageButtons2 a {
     text-decoration: none;
-    font-size: 8vw;
+    font-size: 7vw;
     color:black;
     font-family: "Reenie Beanie", cursive;
   }
@@ -944,10 +949,9 @@ display: none;
   font-size: 12vw;
   }
 
-  .footer img{
-width:50px;
-height:50px;
-  }
+.footer{
+  display: none;
+}
 
   .SignUpPage {
     width: 90%;
@@ -1036,8 +1040,6 @@ height:50px;
   flex-direction: column;
 }
 
-
-
 .basicAdd2 label {
   margin:2% 2% 2% 0;
 }
@@ -1048,6 +1050,10 @@ height:50px;
 .basicAdd2 textarea {
   width: 80%;
   font-size: 6vw;
+}
+
+.aboutUsBar {
+  height: 8vw;
 }
 
 

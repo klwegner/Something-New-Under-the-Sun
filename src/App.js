@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import routes from "./config/routes";
@@ -18,9 +18,6 @@ import AllCities from "./pages/AllCities";
 import IsPrivate from "./components/IsPrivate";
 import EditCity from "./pages/EditCity";
 import EditDestination from "./pages/EditDestination";
-import MyMapComponent from "./components/MyMapComponent";
-import ErrorComponent from "./components/ErrorComponent";
-import Loading from "./components/Loading";
 import AboutUs from "./components/AboutUs";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/Contact";
@@ -29,10 +26,11 @@ import Title from "./components/Title";
 
 const API_URL = "http://localhost:5005";
 
-
 function App() {
 
   const [cities, setCities] = useState(null);
+  const [destinations, setDestinations] = useState(null);
+  const { cityId } = useParams();
 
   function getAllCities() {
     const storedToken = localStorage.getItem("authToken");
@@ -62,10 +60,10 @@ function App() {
        <Route path='/profile/:userId' element={<IsPrivate> <UserProfile/> </IsPrivate>}/>
        <Route path='/*' element={<ErrorPage/>}/>
        <Route path='/addCity' element={<IsPrivate><AddCityPage refreshCities={getAllCities}/></IsPrivate>}/>
-       <Route path='/addDestination' element={<IsPrivate><AddDestination cities={cities}/></IsPrivate>}/>
+       <Route path='/cities/:cityId/addDestination' element={<IsPrivate><AddDestination cities={cities}/></IsPrivate>}/>
        <Route path='/randomCity' element={<RandomCity cities={cities}/>}/>
        <Route path='/profile/:userId/cities' element={<IsPrivate><YourCities cities={cities}/></IsPrivate>}/>
-       <Route path='/cities/:cityId' element={<CityInfo cities={cities}/>}/>
+       <Route path='/cities/:cityId' element={<CityInfo  cities={cities}/>}/>
        <Route path='/cities' element={<AllCities cities={cities}/>}/>
        <Route path='/destination/:destinationId' element={<IsPrivate><EditDestination cities={cities}/></IsPrivate>}/>
        <Route path='/cities/:cityId/edit' element={<IsPrivate><EditCity refreshCities={getAllCities} cities={cities}/></IsPrivate>}/>

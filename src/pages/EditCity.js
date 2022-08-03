@@ -9,14 +9,12 @@ function EditCity(props) {
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [location, setLocation] = useState('');
+    // const [location, setLocation] = useState('');
+    const [usState, setUsState] = useState("");
+    const [country, setCountry] = useState("");
     const [visited, setVisited] = useState(false);
     const navigate = useNavigate();
-
-    // const { cities } = props;
     const { cityId } = useParams();
-    // const [foundCity, setFoundCity] = useState(null)
-
    const { storedToken } = useContext(AuthContext);
 
 
@@ -27,7 +25,8 @@ function EditCity(props) {
             const oneCity = response.data;
             setName(oneCity.name);
             setDescription(oneCity.description);
-            setLocation(oneCity.location);
+            setUsState(oneCity.usState);
+            setCountry(oneCity.country)
             setVisited(oneCity.visited);
           })
           .catch((error) => console.log(error));   
@@ -37,7 +36,7 @@ function EditCity(props) {
  
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { name, description, location, visited };
+    const requestBody = { name, description, usState, country, visited };
  
     axios
       .put(`${API_URL}/api/cities/${cityId}`, requestBody,  {headers: {Authorization: `Bearer ${storedToken}`}})
@@ -62,7 +61,7 @@ function EditCity(props) {
 
 return(
     <div className='addCityPage'>
-<h1>Edit A City</h1>
+<h1 className="noBackground">Edit A City</h1>
 
 <form onSubmit={handleFormSubmit}>
 <div>
@@ -85,11 +84,21 @@ return(
         </div>
 
         <div>
-           <label>Location:</label>
+           <label>State:</label>
         <textarea
-          name="location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
+          name="usState"
+          value={usState}
+          onChange={(e) => setUsState(e.target.value)}
+        />
+        </div>
+
+        
+        <div>
+           <label>Country:</label>
+        <textarea
+          name="country"
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
         />
         </div>
  
@@ -107,7 +116,7 @@ return(
         </div>
 
 <div>
-        <button type="submit">Update Project</button>
+        <button type="submit">Update City</button>
         </div>
 
       </form>
