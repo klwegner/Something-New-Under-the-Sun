@@ -14,14 +14,14 @@ function RandomCity(props) {
 
   return (
     <>
-        <h1>A Random City</h1>
+        <h1 className='userH'>How About Visiting...</h1>
 
       {randoCity && (
         <div className="cityDetails">
-          <h3>{randoCity.name}</h3>
-          <h4>{randoCity.description}</h4>
+          <h2>{randoCity.name}</h2>
+          <p>{randoCity.description}</p>
           <MyMapComponent/>
-          <h4> Recommendations for destinations in {randoCity.name} by Atlas Obscura:</h4>
+          <p> Recommendations for destinations in {randoCity.name} by Atlas Obscura:</p>
         </div>
       )}
     </>

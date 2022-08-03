@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";                     
 import { AuthContext } from "../context/auth.context.js";
+import Home from '../assets/icons/018-home-2.png'
+import Profile from '../assets/icons/019-profile.png'
+import LogOut from '../assets/icons/016-log-out-2.png'
+import Register from '../assets/icons/003-register.png';
+import Login from '../assets/icons/001-login.png';
+import Backpack from '../assets/icons/009-backpack.png'
 
 function Navbar() {
 
@@ -8,26 +14,29 @@ function Navbar() {
 
     return(
         <nav>
-
         <div className="navLinks">
-            <Link to='/'><button>Home</button></Link>
-            <Link to='/error'><button>Error</button></Link>
+           <div>
+ <h1>Under the Sun</h1>
+ </div>
+            {/* <Link to='/error'><button>Error</button></Link> */}
 
 
             {isLoggedIn && (
-        <>
-            <Link to='/Profile/:profileId'><button>Your Profile</button></Link>   
-            <button onClick={logOutUser}>Log Out</button>
-        </>
+        <div>
+            <Link to='/Profile/:profileId'><button><img src={Profile} alt='userProfile'></img></button></Link>   
+        <Link to='/'><button><img src={Home} alt='home'></img></button></Link>
+            <button onClick={logOutUser}><img src={LogOut} alt='LogOut'></img></button>
+        </div>
         )}
 
         {!isLoggedIn && (
 
-        <>
-            <Link to="/signup"><button>Sign Up</button></Link>
-            <Link to="/login"><button>Login</button></Link>
+        <div>
+        <Link to='/'><button><img src={Home} alt='home'></img></button></Link>
+            <Link to="/signup"><button><img src={Register} alt='home'></img></button></Link>
+            <Link to="/login"><button><img src={Login} alt='home'></img></button></Link>
 
-        </>
+        </div>
       )}
             </div>
         </nav>

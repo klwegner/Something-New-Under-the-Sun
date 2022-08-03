@@ -22,6 +22,9 @@ import EditDestination from "./pages/EditDestination";
 import MyMapComponent from "./components/MyMapComponent";
 import ErrorComponent from "./components/ErrorComponent";
 import Loading from "./components/Loading";
+import AboutUs from "./components/AboutUs";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/Contact";
 
 const API_URL = "http://localhost:5005";
 
@@ -48,6 +51,7 @@ function App() {
 
   return (
     <div className="App">
+    <AboutUs />
     <Navbar />
       <Routes>
        <Route path='/' element ={<HomePage />} />
@@ -64,6 +68,8 @@ function App() {
        <Route path='/cities' element={<AllCities cities={cities}/>}/>
        <Route path='/destination/:destinationId' element={<IsPrivate><EditDestination cities={cities}/></IsPrivate>}/>
        <Route path='/cities/:cityId/edit' element={<IsPrivate><EditCity refreshCities={getAllCities} cities={cities}/></IsPrivate>}/>
+      <Route path='/about' element={<AboutPage/>} />
+      <Route path='/contact' element={<ContactPage/>}/>
       </Routes>
     </div>
   );
