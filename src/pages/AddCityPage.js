@@ -6,7 +6,7 @@ import { AuthContext } from "../context/auth.context";
 const API_URL = "http://localhost:5005";
 
 
-function AddCityPage() {
+function AddCityPage(props) {
 
 const [name, setName] = useState('');
 const [description, setDescription] = useState('');
@@ -33,6 +33,7 @@ headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}`}
 })
     .then((response) =>{
         console.log(response.data)
+        props.refreshCities();
         navigate('/cities');
     })
     .catch((err) => setMessage(err.response.data.message))
@@ -43,17 +44,17 @@ return(
     <h1>Add a City</h1>
     <form onSubmit={handleSubmitCity}>
     <div>
-<label>City Name</label>
+<label> Name</label>
 <input type ="text" name="name" value={name} onChange={handleName} />
 </div>
 
 <div> 
-<label>City Location</label>
+<label> Location</label>
 <input type="text" name="location" value={location} onChange={handleLocation} />
 </div>
 
 <div> 
-<label>City Description</label>
+<label> Description</label>
 <textarea type="text" name="description" value={description} onChange={handleDescription} rows="4" cols="33"></textarea>
 </div>
 

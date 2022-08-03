@@ -30,19 +30,23 @@ if (city) {
         <div className="cityDetails">
         <button><Link to={`/cities/${foundCity._id}/edit`}>Edit City</Link></button>
           <h1>{foundCity.name}</h1>
-          <h2>{foundCity.location}</h2>
+          <h3>{foundCity.location}</h3>
           <p>{foundCity.description}</p>    
 
 <>
-{foundCity.visited === true ? <p> You have visited this city. </p> : <p>You have not yet visited this city.</p>}
+{foundCity.visited === true ? <p> <i>You have visited this city. </i> </p> : <p><i> You have not yet visited this city.</i> </p>}
 </>    
-          <h2>User Destinations in {foundCity.name}</h2>
-          <Destination />
+<div className="middleOfCityDetails">
+<div className="column">
+          <h2>Destinations in {foundCity.name}</h2>
+      
           <ul>
-            <li>Destination 1</li>
-            <li>Destination 2</li>
+            <li>    <Destination /></li>
+            <li>    <Destination /></li>
           </ul>
+          </div>
 <MyMapComponent/>
+          </div>
 
           <h2>Interested in more cool things from {foundCity.name}?</h2>
           <p>See Atlas Obscura's suggestions here.</p>

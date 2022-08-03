@@ -13,18 +13,14 @@ function EditCity(props) {
     const [visited, setVisited] = useState(false);
     const navigate = useNavigate();
 
-    const { cities } = props;
+    // const { cities } = props;
     const { cityId } = useParams();
-    const [foundCity, setFoundCity] = useState(null)
-
-
+    // const [foundCity, setFoundCity] = useState(null)
 
    const { storedToken } = useContext(AuthContext);
 
 
     useEffect(() => {
-
-
         axios
           .get(`${API_URL}/api/cities/${cityId}`, {headers: {Authorization: `Bearer ${storedToken}`}})
           .then((response) => {
@@ -35,7 +31,7 @@ function EditCity(props) {
             setVisited(oneCity.visited);
           })
           .catch((error) => console.log(error));   
-      }, [cityId]);
+      }, [cityId, storedToken]);
 
   //below sends info to backend
  
@@ -54,9 +50,9 @@ function EditCity(props) {
       const deleteCity = () => {                    
         axios
           .delete(`${API_URL}/api/cities/${cityId}`, {headers: {Authorization: `Bearer ${storedToken}`}})
-          .then(() => {
-            // Once the delete request is resolved successfully
-            // navigate back to the list of projects.
+          .then((response) => {
+           console.log(response.status);
+            props.refreshCities();
             navigate("/cities");
           })
           .catch((err) => console.log(err));
@@ -114,8 +110,8 @@ return(
         <button type="submit">Update Project</button>
         </div>
 
-<button onClick={deleteCity}>Delete City</button>
       </form>
+<button onClick={deleteCity}>Delete City</button>
 </div>
 )}
 export default EditCity;

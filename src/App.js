@@ -15,7 +15,6 @@ import RandomCity from "./pages/RandomCity";
 import YourCities from "./pages/YourCities";
 import CityInfo from "./pages/CityInfo";
 import AllCities from "./pages/AllCities";
-import HomePageWithNavigate from "./pages/HomePageWithNavigate";
 import IsPrivate from "./components/IsPrivate";
 import EditCity from "./pages/EditCity";
 import EditDestination from "./pages/EditDestination";
@@ -25,6 +24,8 @@ import Loading from "./components/Loading";
 import AboutUs from "./components/AboutUs";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/Contact";
+import Footer from "./components/footer";
+import Title from "./components/Title";
 
 const API_URL = "http://localhost:5005";
 
@@ -52,15 +53,15 @@ function App() {
   return (
     <div className="App">
     <AboutUs />
+    <Title />
     <Navbar />
       <Routes>
-       <Route path='/' element ={<HomePage />} />
-       <Route path='/' element={<HomePageWithNavigate />} /> 
+       <Route path='/' element ={<HomePage />} /> 
        <Route path='/signup' element ={<SignUpPage/>}/>
        <Route path='/login' element ={<LogInPage/>}/>
        <Route path='/profile/:userId' element={<IsPrivate> <UserProfile/> </IsPrivate>}/>
        <Route path='/*' element={<ErrorPage/>}/>
-       <Route path='/addCity' element={<IsPrivate><AddCityPage/></IsPrivate>}/>
+       <Route path='/addCity' element={<IsPrivate><AddCityPage refreshCities={getAllCities}/></IsPrivate>}/>
        <Route path='/addDestination' element={<IsPrivate><AddDestination cities={cities}/></IsPrivate>}/>
        <Route path='/randomCity' element={<RandomCity cities={cities}/>}/>
        <Route path='/profile/:userId/cities' element={<IsPrivate><YourCities cities={cities}/></IsPrivate>}/>
@@ -71,6 +72,7 @@ function App() {
       <Route path='/about' element={<AboutPage/>} />
       <Route path='/contact' element={<ContactPage/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }

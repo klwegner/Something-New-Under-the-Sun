@@ -13,7 +13,7 @@ function AllCities(props) {
   return (
     <>
       <div className="pageTop">
-        <h1> Cities </h1>
+        <p> Cities </p>
         <label> Search Cities</label>
         <input
           placeholder="Enter City Name"
