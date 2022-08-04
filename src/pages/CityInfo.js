@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import Destination from "../components/Destination";
 import MyMapComponent from "../components/MyMapComponent";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function CityInfo(props) {
   const { cities } = props;

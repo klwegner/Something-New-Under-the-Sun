@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // import { AuthContext } from "../context/auth.context";
 import City from "../assets/icons/001-cityscape.png";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function AddCityPage(props) {
   const [name, setName] = useState("");

@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import AddDestination from "../components/AddDestination";
 import Backpack from '../assets/icons/009-backpack.png'
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function AddDestinationPage() {
 

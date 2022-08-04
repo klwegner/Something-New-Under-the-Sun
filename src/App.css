@@ -1,14 +1,14 @@
 body {
-  background-color: #8FBDD3;
+  background-color: #DFBB9D;
   font-family: "Public Sans", sans-serif;
 }
 
 input {
-  background-color: #E4D1B9;
+  background-color: #F7E2D6;
 }
 
 textarea {
-  background-color: #E4D1B9;
+  background-color: #F7E2D6;
 }
 
 .noBackground {
@@ -78,11 +78,11 @@ h1 {
 }
 
 .aboutUsBar {
-  background-color: #8FBDD3;
+  background-color: #DFBB9D;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 2vw;
+  height: 3vw;
 }
 .leftSide {
   display: flex;
@@ -109,7 +109,8 @@ h1 {
 }
 
 nav {
-  background-color: #A97155;
+  background-color:rgba(160, 132, 207, 0.8);
+  border-bottom: 0.5vw outset #A66CFF;
   margin: 0;
   align-items: center;
 }
@@ -126,7 +127,7 @@ nav img {
 }
 
 .navLinks button {
-  background-color: #A97155;
+    background-color:transparent;
 }
 
 .titleDiv {
@@ -136,15 +137,17 @@ height:8vw;
 margin: 0;
 align-items: center;
 justify-content: center;
-background-color: #BE8C63;
+background-color: #9DD6DF;
+border-top:0.5vw outset #9DD6DF;
+
 }
 
 .titleDiv h1{
-  text-shadow: -1px 0 #E4D1B9, 0 1px #E4D1B9, 1px 0 #A97155, 0 -1px #A97155;
+  text-shadow: -1px 0 #F7E2D6, 0 1px #F7E2D6, 1px 0 #A66CFF, 0 -1px #A66CFF;
 margin:0;
 font-size: 7vw;
 text-align: center;
-background-color: #BE8C63;
+background-color: #9DD6DF;
 }
 
 .titleDiv img{
@@ -155,7 +158,7 @@ background-color: #BE8C63;
 }
 
 .HomePage {
-  background-color: #8fbdd3;
+  background-color: #DFBB9D;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,7 +169,7 @@ background-color: #BE8C63;
 }
 
 .HomePage h1{
-  background-color: #8FBDD3;
+  background-color: #DFBB9D;
   margin:0;
 }
 
@@ -180,8 +183,10 @@ background-color: #BE8C63;
 .footer {
   display: flex;
   justify-content: space-evenly;
-  background-color: #E4D1B9;
-  margin: 0%;
+  background-color: #F7E2D6;
+  border: 0.5vw outset #F7E2D6;
+
+    margin: 0%;
   width:100%;
 }
 
@@ -293,8 +298,9 @@ button {
   padding: 5px;
   width: 26%;
   margin: 2% 37%;
-  background-color: #A97155;
+  background-color: #A66CFF;
   font-size: 2vw;
+  border-radius:10px;
 }
 
 .SignUpPage {
@@ -305,7 +311,7 @@ button {
 }
 
 .SignUpPage h1 {
-background-color: #8FBDD3;
+background-color: #DFBB9D;
 font-size:5vw;
 margin:0;
 }
@@ -328,7 +334,7 @@ margin:0;
   border: none;
   font-size: 2vw;
   border-radius: 10px;
-  background-color: #E4D1B9;
+  background-color: #A66CFF;
   width:10%;
   margin:2% 45% 0 45%;
 }
@@ -392,10 +398,10 @@ margin:0;
 .oneCity {
   width: 20%;
   margin: 2vw;
-  background-color: #BE8C63;
+  background-color: #9DD6DF;
   border-radius: 10px;
   padding:1%;
-  border: 0.5vw outset #A97155;
+  border: 0.5vw outset #F7E2D6;
 }
 
 .oneCity a{
@@ -407,7 +413,7 @@ margin:0;
 }
 
 .oneCity a:hover{
-  color: #A97155;
+  color: #F7E2D6;
 }
 .middleOfCityDetails {
   display: flex;
@@ -465,7 +471,7 @@ margin:0;
 
 .userProfile h1 {
   font-size: 3vw;
-  background-color: transparent;
+  background-color: #F7E2D6;
   text-shadow: -1px 0 #E4D1B9, 0 1px #E4D1B9, 1px 0 #A97155, 0 -1px #A97155;
 }
 
@@ -473,6 +479,7 @@ margin:0;
   font-size:10vw;
   margin:0;
   padding:0;
+  background-color: #F7E2D6;
   text-shadow: -1px 0 #E4D1B9, 0 1px #E4D1B9, 1px 0 #A97155, 0 -1px #A97155;
 }
 
@@ -486,7 +493,7 @@ margin:0;
   display: flex;
   flex-direction: column;
   justify-content: center;
- background-color: #BE8C63;
+ background-color: #9DD6DF;
  border-radius: 10px;
 }
 
@@ -502,7 +509,7 @@ text-align: center;
 .bottomBorder {
   width: 20%;
   margin:1% 40%;
-  border-bottom:1px solid #A97155;
+  border-bottom:1px solid #A084CF;
 
 }
 
@@ -510,7 +517,7 @@ nav button {
   border: none;
   font-size: 2vw;
   border-radius: 10px;
-  background-color: #E4D1B9;
+  background-color: transparent;
   height: 75px;
 }
 
@@ -530,7 +537,7 @@ nav button {
     margin: 5%;
     display: flex;
     flex-direction: column;
-    background-color: #8fbdd3;
+    background-color: #DFBB9D;
   }
 
   .HomePage2 img {
@@ -550,7 +557,8 @@ nav button {
     width: 25vw;
     height: 15vw;
     border-radius: 10px;
-    background-color: #E4D1B9;
+    background-color: #F7E2D6;
+    border: 0.5vw outset #F7E2D6;
     font-family: "Reenie Beanie", cursive;
   }
 
@@ -574,7 +582,7 @@ nav button {
   
   .userProfile h1 {
     font-size: 6vw;
-    background-color: transparent;
+    background-color:#F7E2D6;
   } 
 
   .userProfile img{
@@ -686,7 +694,7 @@ nav button {
           border: none;
           font-size: 5vw;
           border-radius: 10px;
-          background-color: #E4D1B9;
+          background-color: #A66CFF;
           width:26%;
           margin:2% 34% 0 34%;
         }
@@ -729,7 +737,7 @@ nav button {
         .addCityPage button {
           width: 40%;
           margin: 5% 30%;
-          background-color: #A97155;
+          background-color: #A66CFF;
           font-size: 4vw;
         }
 
@@ -806,7 +814,7 @@ nav button {
     margin: 5%;
     display: flex;
     flex-direction: column;
-    background-color: #8fbdd3;
+    background-color: #DFBB9D;
   }
 
   .HomePage2 img {
@@ -831,7 +839,9 @@ nav button {
     width: 30vw;
     height: 20vw;
     border-radius: 10px;
-    background-color: #E4D1B9;
+    background-color: #F7E2D6;
+    border: 0.5vw outset #F7E2D6;
+
     font-family: "Reenie Beanie", cursive;
   }
 
@@ -856,7 +866,7 @@ nav button {
   
   .userProfile h1 {
     font-size: 10vw;
-    background-color: transparent;
+    background-color: #F7E2D6;
   }
 
   .userProfile img{
@@ -959,7 +969,7 @@ display: none;
   }
   
   .SignUpPage h1 {
-  background-color: #8FBDD3;
+  background-color: #DFBB9D;
   font-size:15vw;
   margin:0;
   }
@@ -977,9 +987,10 @@ display: none;
   }
   
   .SignUpPage button {
-    font-size: 9vw;
-    width:34%;
-    margin:2% 33% 0 33%;
+    font-size: 8vw;
+    width:36%;
+    margin:5% 32% 0 32%;
+    height:12vw;
   }
 
   .SignUpPage p{
@@ -1022,7 +1033,7 @@ display: none;
 
     width: 40%;
     margin: 5% 30%;
-    background-color: #A97155;
+    background-color: #A66CFF;
     font-size: 6vw;
   }
 

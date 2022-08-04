@@ -2,7 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from "react-router-dom"; 
 import { AuthContext } from '../context/auth.context';
-const API_URL = "http://localhost:5005";
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function EditCity(props) {
@@ -12,7 +13,7 @@ function EditCity(props) {
     // const [location, setLocation] = useState('');
     const [usState, setUsState] = useState("");
     const [country, setCountry] = useState("");
-    const [visited, setVisited] = useState(false);
+    // const [visited, setVisited] = useState(false);
     const navigate = useNavigate();
     const { cityId } = useParams();
    const { storedToken } = useContext(AuthContext);
@@ -27,7 +28,7 @@ function EditCity(props) {
             setDescription(oneCity.description);
             setUsState(oneCity.usState);
             setCountry(oneCity.country)
-            setVisited(oneCity.visited);
+            // setVisited(oneCity.visited);
           })
           .catch((error) => console.log(error));   
       }, [cityId, storedToken]);
@@ -36,7 +37,7 @@ function EditCity(props) {
  
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { name, description, usState, country, visited };
+    const requestBody = { name, description, usState, country };
  
     axios
       .put(`${API_URL}/api/cities/${cityId}`, requestBody,  {headers: {Authorization: `Bearer ${storedToken}`}})
@@ -102,7 +103,7 @@ return(
         />
         </div>
  
-        <div>
+        {/* <div>
  <label>Visited:</label>
         <select
         name="visited"
@@ -113,7 +114,7 @@ return(
 <option> true </option>
         </select>
          
-        </div>
+        </div> */}
 
 <div>
         <button type="submit">Update City</button>
