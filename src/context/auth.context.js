@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -9,6 +10,7 @@ function AuthProviderWrapper(props) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
 
     const storeToken = (token) => {      
@@ -65,6 +67,7 @@ function AuthProviderWrapper(props) {
         removeToken();
         // and update the state variables    
         authenticateUser();
+       navigate('/')
       }  
 
       useEffect(() => {                                    

@@ -48,6 +48,26 @@ function App() {
         getAllCities();
 }, [])
 
+
+
+// function getAllDestinations() {
+//   const storedToken = localStorage.getItem("authToken");
+
+//   axios.get(
+//   `${API_URL}/api/city/destinations`,
+//   { headers: { Authorization: `Bearer ${storedToken}` } }
+// )
+//   .then((response) => { 
+//     console.log(response)
+//     setDestinations(response.data)})
+//   .catch((error) => console.log(error));
+// }
+// useEffect(()=>{
+//       getAllDestinations();
+// }, [])
+
+
+
   return (
     <div className="App">
     <AboutUs />
@@ -57,7 +77,7 @@ function App() {
        <Route path='/' element ={<HomePage />} /> 
        <Route path='/signup' element ={<SignUpPage/>}/>
        <Route path='/login' element ={<LogInPage/>}/>
-       <Route path='/profile/:userId' element={<IsPrivate> <UserProfile/> </IsPrivate>}/>
+       <Route path='/profile/:userId' element={<IsPrivate> <UserProfile cities={cities}/> </IsPrivate>}/>
        <Route path='/*' element={<ErrorPage/>}/>
        <Route path='/addCity' element={<IsPrivate><AddCityPage refreshCities={getAllCities}/></IsPrivate>}/>
        <Route path='/cities/:cityId/addDestination' element={<IsPrivate><AddDestination cities={cities}/></IsPrivate>}/>
@@ -65,7 +85,8 @@ function App() {
        <Route path='/profile/:userId/cities' element={<IsPrivate><YourCities cities={cities}/></IsPrivate>}/>
        <Route path='/cities/:cityId' element={<CityInfo  cities={cities}/>}/>
        <Route path='/cities' element={<AllCities cities={cities}/>}/>
-       <Route path='/destination/:destinationId' element={<IsPrivate><EditDestination cities={cities}/></IsPrivate>}/>
+       <Route path='/cities/:cityId/destinations/:destinationId' element={<IsPrivate><EditDestination/></IsPrivate>}/>
+       {/* <Route path='/destinations/:destinationId' element={<IsPrivate><EditDestination cities={cities}/></IsPrivate>}/> */}
        <Route path='/cities/:cityId/edit' element={<IsPrivate><EditCity refreshCities={getAllCities} cities={cities}/></IsPrivate>}/>
       <Route path='/about' element={<AboutPage/>} />
       <Route path='/contact' element={<ContactPage/>}/>

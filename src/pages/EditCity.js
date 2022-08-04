@@ -13,7 +13,7 @@ function EditCity(props) {
     // const [location, setLocation] = useState('');
     const [usState, setUsState] = useState("");
     const [country, setCountry] = useState("");
-    // const [visited, setVisited] = useState(false);
+    const [visited, setVisited] = useState(false);
     const navigate = useNavigate();
     const { cityId } = useParams();
    const { storedToken } = useContext(AuthContext);
@@ -28,7 +28,7 @@ function EditCity(props) {
             setDescription(oneCity.description);
             setUsState(oneCity.usState);
             setCountry(oneCity.country)
-            // setVisited(oneCity.visited);
+            setVisited(oneCity.visited);
           })
           .catch((error) => console.log(error));   
       }, [cityId, storedToken]);
@@ -103,7 +103,7 @@ return(
         />
         </div>
  
-        {/* <div>
+        <div>
  <label>Visited:</label>
         <select
         name="visited"
@@ -114,7 +114,7 @@ return(
 <option> true </option>
         </select>
          
-        </div> */}
+        </div>
 
 <div>
         <button type="submit">Update City</button>

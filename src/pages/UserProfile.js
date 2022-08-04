@@ -1,11 +1,12 @@
-import { useContext } from "react";
 import UserCityList from "../components/UserCityList";
 import UserVisitedCityList from "../components/UserVisitedCityList";
+
+import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import travel from '../assets/icons/010-travel.png';
 
 
-function UserProfile() {
+function UserProfile(props) {
     const {isLoggedIn, user } = useContext(AuthContext)
 console.log(user);
 
@@ -19,18 +20,15 @@ console.log(user);
 <img src={travel} alt="traveler"></img>
 <div className='userProfileRight'>
 
-<UserCityList/>
+<UserCityList cities={props.cities}/>
 
-<UserVisitedCityList/>
+<UserVisitedCityList cities={props.cities}/>
 <p><i>A good traveler has no fixed plans, and is not intent on arriving.</i></p> 
 <p>-Lao Tzu</p>
 </div>
 </div>
 
-
-
 <a href="https://www.flaticon.com/free-icons/travel" title="travel icons">Travel icons created by Eucalyp - Flaticon</a>
-
 </>
 )}
 

@@ -1,11 +1,16 @@
+import { useContext } from "react";                     
+import { AuthContext } from "../context/auth.context.js";
 import YourCitiesIcon from '../assets/icons/YourCitiesIcon.png';
 import AllCitiesIcon from '../assets/icons/AllCitiesIcon.png';
 import Inspo from '../assets/icons/Inspo.png'
 import Add from '../assets/icons/Add.png';
 
 function Footer() {
-    return(
+    const { isLoggedIn, user } = useContext(AuthContext);
 
+    return(
+        <>
+        {isLoggedIn && ( 
         <div className="footer">
 
   <button><a href='/profile/:userId/cities'><img src={YourCitiesIcon} alt="yourCities"></img> </a></button>
@@ -15,6 +20,8 @@ function Footer() {
 
 
 </div>
+)}
+</>
     )
 }
 export default Footer;

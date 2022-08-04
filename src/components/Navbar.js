@@ -4,10 +4,10 @@ import { AuthContext } from "../context/auth.context.js";
 import Home from '../assets/icons/018-home-2.png'
 import Profile from '../assets/icons/019-profile.png'
 import LogOut from '../assets/icons/016-log-out-2.png'
-import Register from '../assets/icons/003-register.png';
-import Login from '../assets/icons/001-login.png';
-import Backpack from '../assets/icons/009-backpack.png'
-import SignUpPage from "../pages/SignUpPage.js";
+// import Register from '../assets/icons/003-register.png';
+// import Login from '../assets/icons/001-login.png';
+// import Backpack from '../assets/icons/009-backpack.png'
+// import SignUpPage from "../pages/SignUpPage.js";
 
 function Navbar() {
 
@@ -26,13 +26,14 @@ function Navbar() {
         )}
 
         {!isLoggedIn && (
-
-        <div>
+<>
+        {/* <div>
         <Link to='/'><button><img src={Home} alt='home'></img></button></Link>
             <Link to={"/signup"}><button><img src={Register} alt='home'></img></button></Link>
             <Link to={"/login"}><button><img src={Login} alt='login'></img></button></Link>
 
-        </div>
+        </div> */}
+        </>
       )}
             </div>
         </nav>

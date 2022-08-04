@@ -1,8 +1,10 @@
+import EditDestinationComp from "../components/EditDestinationComp";
+
 function EditDestination() {
     return(
 
-        <h1>You made the destination, now edit it!</h1>
-    )
+<EditDestinationComp />   
+ )
 }
 
 export default EditDestination;

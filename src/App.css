@@ -174,9 +174,9 @@ background-color: #9DD6DF;
 }
 
 .HomePage img {
-  width: 20%;
+  width:34%;
   height: auto;
-  margin: 1% 40%;
+  margin: 1% 33%;
   z-index: 10;
 }
 
@@ -271,7 +271,7 @@ button {
 }
 
 .addCityPage input {
-  width: 40vw;
+  width: 50vw;
   height: 2vw;
   margin: 1vw 0;
   font-size: 2vw;
@@ -282,16 +282,16 @@ button {
 }
 
 .addCityPage select {
-  width: 7%;
-  height: 2vw;
-  margin: 1vw 0;
-  font-size: 1.8vw;
+  width: 10%;
+  height: 5vw;
+  margin: 1vw;
+  font-size: 2vw;
 }
 
 .addCityPage textarea {
   margin: 1vw 0;
   font-size: 2vw;
-  width: 40vw;
+  width: 50vw;
 }
 
 .addCityPage button {
@@ -303,6 +303,21 @@ button {
   border-radius:10px;
 }
 
+.cityInfoBtn{
+  width: 16%;
+  margin: 2% 42%;
+  height:6vw;
+  background-color: #A66CFF;
+  font-size: 2vw;
+  border-radius:10px;
+  border: 0.5vw inset #A66CFF;
+}
+
+.cityInfoBtn a{
+  text-decoration: none;
+  color:black;
+}
+
 .SignUpPage {
   display: flex;
   flex-direction: column;
@@ -311,31 +326,31 @@ button {
 }
 
 .SignUpPage h1 {
-background-color: #DFBB9D;
-font-size:5vw;
+background-color: transparent;
+font-size:10vw;
 margin:0;
 }
 
 .SignUpPage input {
-  width: 25%;
-  height: 2vw;
+  width: 50%;
+  height: 4vw;
   margin: 1vw 0;
-  font-size: 2vw;
+  font-size: 3vw;
   background-color: #E4D1B9;
 }
 
 .SignUpPage label {
   margin-right: 2%;
   text-align: left;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 .SignUpPage button {
   border: none;
-  font-size: 2vw;
+  font-size: 3vw;
   border-radius: 10px;
-  background-color: #A66CFF;
-  width:10%;
+  background-color: rgb(160, 132, 207);
+  width:20%;
   margin:2% 45% 0 45%;
 }
 
@@ -398,10 +413,10 @@ margin:0;
 .oneCity {
   width: 20%;
   margin: 2vw;
-  background-color: #9DD6DF;
+  background-color: rgba(157, 214, 223, 0.8);
   border-radius: 10px;
   padding:1%;
-  border: 0.5vw outset #F7E2D6;
+  border: 0.5vw outset #9DD6DF;
 }
 
 .oneCity a{
@@ -426,6 +441,10 @@ margin:0;
   width:100%;
 }
 
+.column h2 {
+  margin: 2% 5%;
+}
+
 .cityDetails {
   width: 90%;
   margin: 2% 5%;
@@ -442,11 +461,11 @@ margin:0;
   margin-top: 2%;
 }
 
-.cityDetails button {
+/* .cityDetails button {
   padding: 0.5vw 1vw;
   width: 10%;
   margin: 2% 45%;
-}
+} */
 
 .googleMap {
   width: 100%;
@@ -480,7 +499,7 @@ margin:0;
   margin:0;
   padding:0;
   background-color: #F7E2D6;
-  text-shadow: -1px 0 #E4D1B9, 0 1px #E4D1B9, 1px 0 #A97155, 0 -1px #A97155;
+  text-shadow: -1px 0 #9DD6DF, 0 1px #9DD6DF, 1px 0 #A084CF, 0 -1px #A084CF;
 }
 
 .userProfileRight {
@@ -510,7 +529,65 @@ text-align: center;
   width: 20%;
   margin:1% 40%;
   border-bottom:1px solid #A084CF;
+}
 
+.HomePageLoggedOut{
+  display:flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.HomePageLoggedOut h1 {
+  z-index: 5;
+  background-color: transparent;
+  font-size: 14vw;
+  margin-top:12%;
+  text-shadow: -3px 0 #9DD6DF, 0 3px #9DD6DF, 3px 0 #A084CF, 0 -3px #A084CF;
+  /* transform: rotate(-45deg); */
+}
+
+.centeredRow h2 {
+  font-family: "Reenie Beanie", cursive;
+  font-style: italic;
+  font-size: 4vw;
+  z-index: 5;
+  text-align: center;
+  margin: 0;
+  text-shadow: -3px 0 #9DD6DF, 0 3px #9DD6DF, 3px 0 #A084CF, 0 -3px #A084CF;
+
+}
+
+.centeredRow2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30% 5% 0 5%;
+  height:20vw;
+  /* margin-top: 30%; */
+  z-index: 11;
+  position:absolute;
+}
+
+.centeredRow2 img{
+  width:15vw;
+   }
+
+
+.centeredRow{
+text-align: center;
+  width:100%;
+  margin: 0;
+}
+
+.mainPic {
+width:50%;
+margin: 0% 25%;
+border-radius: 50%;
+position:absolute;
+background-color: #9DD6DF ;
+border: 1vw solid #A084CF;
 }
 
 nav button {
@@ -520,6 +597,55 @@ nav button {
   background-color: transparent;
   height: 75px;
 }
+
+.homePageBlurb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:90%;
+  margin: 5%;
+  margin-top: 10%;
+  background-color:rgba(160, 132, 207, 0.9);
+  border-radius: 10px;
+  z-index: 12;
+}
+
+.homePageBlurb h2{
+  font-size: 2.5vw;
+  margin:1% 10%;
+  text-shadow: -2px 0 #9DD6DF, 0 2px #9DD6DF, 2px 0 #A084CF, 0 -2px #A084CF;
+  text-align: center;
+}
+.homePageBlurb p{
+  font-family: "Reenie Beanie", cursive;
+  font-size: 5vw;
+  margin:2% 5%;
+  text-align: center;
+}
+
+.middleOfCityDetails {
+  background-color: rgba(157, 214, 223, 0.8);
+  border-radius: 10px;
+}
+
+
+.oneDestination{
+display: flex;
+flex-direction: column;
+justify-content: left;
+}
+
+.oneDestination li{
+  list-style-type: none;
+}
+
+.oneDestination p{
+margin-left:10%;
+
+}
+
+
+
 
 @media (min-width: 993px) {
   .HomePage2 {
@@ -532,6 +658,7 @@ nav button {
     display: none;
   }
 
+
   .HomePage2 {
     width: 90%;
     margin: 5%;
@@ -541,8 +668,8 @@ nav button {
   }
 
   .HomePage2 img {
-    width: 50%;
-    margin: 5% 25%;
+    width: 40%;
+    margin: 5% 30%;
   }
 
   .homePageButtons2 {
@@ -552,6 +679,30 @@ nav button {
     width: 90%;
     margin: 2% 5%;
   }
+
+  .homePageButtons2bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+    margin: 2% 5%;
+  }
+
+  .homePageButtons2bottom button {
+    width: 25vw;
+    height: 15vw;
+    border-radius: 10px;
+    background-color: #F7E2D6;
+    border: 0.5vw outset #F7E2D6;
+    font-family: "Reenie Beanie", cursive;
+  }
+  
+    .homePageButtons2bottom a {
+      text-decoration: none;
+      font-size: 5vw;
+      color:black;
+      font-family: "Reenie Beanie", cursive;
+    }
 
   .homePageButtons2 button {
     width: 25vw;
@@ -720,7 +871,6 @@ nav button {
         }
         
         .addCityPage input {
-          width: 40vw;
           height: 5vw;
           font-size: 4vw;
         }
@@ -731,7 +881,6 @@ nav button {
         
         .addCityPage textarea {
           font-size: 4vw;
-          width: 40vw;
         }
         
         .addCityPage button {
@@ -771,11 +920,57 @@ nav button {
         .aboutUsBar {
           height: 4vw;
         }
+
+        .cityInfoBtn{
+          width: 20%;
+          margin: 2% 40%;
+          height:8vw;
+          font-size: 3vw;
+          border-radius:10px;
+        }
         
-
+        .HomePageLoggedOut h1 {
+          font-size: 20vw;
+          margin-top:30%;
+        }
         
+        .centeredRow h2 {
+          background-color: #DFBB9D;
+          font-size: 6vw;
+          z-index: 5;
+        }
+        
+        .centeredRow2 {
+          height:20vw;
+          margin-top: 60%;
 
+        }
 
+        .centeredRow2 img{
+       width:20vw;
+        }
+        
+        .mainPic {
+        width:70%;
+        margin: 0% 15%;
+        }
+
+        .homePageBlurb {
+          width:90%;
+          margin: 5%;
+          margin-top: 15%;
+          background-color: #A084CF;
+          border-radius: 10px;
+        }
+        
+        .homePageBlurb h2{
+          font-size: 4vw;
+          margin:2% 10%;
+        }
+        .homePageBlurb p{
+          font-size: 5vw;
+          margin:5%;
+        }
 
 }
 
@@ -783,6 +978,13 @@ nav button {
 @media screen and (max-width: 600px) {
   body {
 
+  }
+
+  .cityInfoBtn{
+    width: 40%;
+    margin: 5% 30%;
+    height:8vw;
+    font-size: 5vw;
   }
 
   nav {
@@ -851,6 +1053,32 @@ nav button {
     color:black;
     font-family: "Reenie Beanie", cursive;
   }
+
+  .homePageButtons2bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+    margin: 2% 5%;
+  }
+  
+  .homePageButtons2bottom button {
+    width: 30vw;
+    height: 20vw;
+    border-radius: 10px;
+    background-color: #F7E2D6;
+    border: 0.5vw outset #F7E2D6;
+
+    font-family: "Reenie Beanie", cursive;
+  }
+
+  .homePageButtons2bottom a {
+    text-decoration: none;
+    font-size: 7vw;
+    color:black;
+    font-family: "Reenie Beanie", cursive;
+  }
+
 
   h3 {
     text-align: center;
@@ -1015,7 +1243,7 @@ display: none;
   }
   
   .addCityPage input {
-    width: 60vw;
+    width: 70vw;
     height: 7vw;
     font-size: 6vw;
   }
@@ -1026,9 +1254,16 @@ display: none;
   
   .addCityPage textarea {
     font-size: 6vw;
-    width: 60vw;
+    width: 70vw;
   }
   
+  .addCityPage select {
+    width: 25%;
+    height: 6vw;
+    margin: 1vw;
+    font-size: 5vw;
+  }
+
   .addCityPage button {
 
     width: 40%;
@@ -1065,6 +1300,50 @@ display: none;
 
 .aboutUsBar {
   height: 8vw;
+}
+
+.HomePageLoggedOut h1 {
+  font-size: 20vw;
+  margin-top:50%;
+}
+
+.centeredRow h2 {
+  background-color: #DFBB9D;
+  font-size: 9vw;
+  z-index: 5;
+  margin-top:2%;
+}
+
+.centeredRow2 {
+  height:20vw;
+  margin-top: 5%;
+
+}
+
+.centeredRow2 img{
+width:30vw;
+}
+
+.mainPic {
+width:90%;
+margin: 20% 5% 0 5%;
+}
+
+.homePageBlurb {
+  width:90%;
+  margin: 5%;
+  margin-top: 30%;
+  background-color: #A084CF;
+  border-radius: 10px;
+}
+
+.homePageBlurb h2{
+  font-size: 6vw;
+  margin:5% 10%;
+}
+.homePageBlurb p{
+  font-size: 8vw;
+  margin:5%;
 }
 
 

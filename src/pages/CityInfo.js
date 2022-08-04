@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import Destination from "../components/Destination";
+// import EditDestinationComp from "../components/EditDestinationComp";
 import MyMapComponent from "../components/MyMapComponent";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -44,7 +44,7 @@ function CityInfo(props) {
     <>
       {foundCity && (
         <div className="cityDetails">
-          <button>
+          <button className='cityInfoBtn'>
             <Link to={`/cities/${foundCity._id}/edit`}>Edit City</Link>
           </button>
           <h1>{foundCity.name}</h1>
@@ -71,48 +71,33 @@ function CityInfo(props) {
               {
                 destinations.map((destination) => {
                   return (
-                    <div key={destination._id} className="oneCity">
+                    <div key={destination._id} className="oneDestination">
                       <ul>
                         <li>
-                          <Link to={`${destination._id}`}>
+                          <Link to={`destinations/${destination._id}`}>
                             <h3>{destination.name}</h3>
                           </Link>
                         </li>
 
                         <p>{destination.description}</p>
-                        <p>{destination.destinationType}</p>
+                        <p>Category: {destination.destinationType}</p>
+                        <p> Status:
+
+                         {destination.completed === true ? (
+           
+              <>{" "}<i>Done. </i>{" "}</>) : (<> <i> Still to do.</i>{" "}</> )} 
+              </p>
+                      
                       </ul>
+                      <div className='bottomBorder'></div>
                     </div>
                   );
                 })}
 
-              {/* {destinations &&
-            destinations
-            .filter((destination) => {
-if (destination.cityId === cityId) {
-  return destination;
-          }
-          }).map((destination) =>{
-            return (
-              <div key={destination._id} className="oneCity">
-                 
-                  <ul>
-
-                  <li>
-                  <Link to={`${destination._id}`}>
-                    <h3>{destination.name}</h3>
-                  </Link>
-                  </li>
-
-                  <p>{destination.description}</p>
-                  <p>{destination.destinationType}</p>
-                  </ul>
-                </div>
-            )})
-          } */}
-              <Link to={`/cities/${foundCity._id}/addDestination`}>
-                Add Destination
+              <button className='cityInfoBtn'><Link to={`/cities/${foundCity._id}/addDestination`}>
+                Add More
               </Link>
+              </button>
             </div>
 
             <MyMapComponent />
