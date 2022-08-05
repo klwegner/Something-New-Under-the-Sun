@@ -36,7 +36,7 @@ useEffect(() => {
         setName(oneDestination.name);
         setDescription(oneDestination.description);
         setAddress(oneDestination.address);
-        setDestinationType(oneDestination.country)
+        setDestinationType(oneDestination.destinationType)
        setDone(oneDestination.done);
       })
       .catch((error) => console.log(error));   
