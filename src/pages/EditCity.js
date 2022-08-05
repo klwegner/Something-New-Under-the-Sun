@@ -37,7 +37,7 @@ function EditCity(props) {
  
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { name, description, usState, country };
+    const requestBody = { name, description, usState, country, visited };
  
     axios
       .put(`${API_URL}/api/cities/${cityId}`, requestBody,  {headers: {Authorization: `Bearer ${storedToken}`}})

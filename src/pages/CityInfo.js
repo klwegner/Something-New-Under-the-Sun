@@ -12,9 +12,6 @@ function CityInfo(props) {
   const [foundCity, setFoundCity] = useState(null);
   const [destinations, setDestinations] = useState([]);
 
-  console.log(destinations);
-  console.log(cities);
-
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
     const city = cities.find((cityObj) => {
@@ -83,9 +80,9 @@ function CityInfo(props) {
                         <p>Category: {destination.destinationType}</p>
                         <p> Status:
 
-                         {destination.completed === true ? (
+                         {destination.done === true ? (
            
-              <>{" "}<i>Done. </i>{" "}</>) : (<> <i> Still to do.</i>{" "}</> )} 
+              <>{" "}<i>Done. 🎉</i>{" "}</>) : (<> <i> Still to do.</i>{" "}</> )} 
               </p>
                       
                       </ul>
@@ -102,10 +99,6 @@ function CityInfo(props) {
 
             <MyMapComponent />
           </div>
-
-          <h2>Interested in more cool things from {foundCity.name}?</h2>
-          <p>See Atlas Obscura's suggestions here.</p>
-          {/* put component here that allows users to use AtlasObscura API to see interesting locations in city */}
         </div>
       )}
     </>

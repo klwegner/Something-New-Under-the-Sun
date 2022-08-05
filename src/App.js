@@ -1,8 +1,7 @@
 import React from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import routes from "./config/routes";
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import LogInPage from "./pages/LoginPage";
@@ -29,8 +28,7 @@ const API_URL = "http://localhost:5005";
 function App() {
 
   const [cities, setCities] = useState(null);
-  const [destinations, setDestinations] = useState(null);
-  const { cityId } = useParams();
+  // const [destinations, setDestinations] = useState(null);
 
   function getAllCities() {
     const storedToken = localStorage.getItem("authToken");
@@ -40,7 +38,6 @@ function App() {
     { headers: { Authorization: `Bearer ${storedToken}` } }
   )
     .then((response) => { 
-      console.log(response)
       setCities(response.data)})
     .catch((error) => console.log(error));
   }

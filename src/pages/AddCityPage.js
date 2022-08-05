@@ -71,7 +71,7 @@ const [country, setCountry] = useState("");
               <label>State</label>
               <input
                 type="text"
-                name="state"
+                name="usState"
                 value={usState}
                 onChange={handleUsState}
               />
