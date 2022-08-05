@@ -23,7 +23,7 @@ import ContactPage from "./pages/Contact";
 import Footer from "./components/footer";
 import Title from "./components/Title";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 // const API_URL = "http://localhost:5005";
 
 function App() {
@@ -45,26 +45,6 @@ function App() {
   useEffect(()=>{
         getAllCities();
 }, [])
-
-
-
-// function getAllDestinations() {
-//   const storedToken = localStorage.getItem("authToken");
-
-//   axios.get(
-//   `${API_URL}/api/city/destinations`,
-//   { headers: { Authorization: `Bearer ${storedToken}` } }
-// )
-//   .then((response) => { 
-//     console.log(response)
-//     setDestinations(response.data)})
-//   .catch((error) => console.log(error));
-// }
-// useEffect(()=>{
-//       getAllDestinations();
-// }, [])
-
-
 
   return (
     <div className="App">
