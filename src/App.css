@@ -282,7 +282,14 @@ button {
 }
 
 .addCityPage select {
-  width: 10%;
+  width: 20%;
+  height: 5vw;
+  margin: 1vw;
+  font-size: 2vw;
+}
+
+.select1 select{
+  width: 40%;
   height: 5vw;
   margin: 1vw;
   font-size: 2vw;

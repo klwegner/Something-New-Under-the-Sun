@@ -92,31 +92,17 @@ useEffect(() => {
   </div>
   
   <>
-  <label>Category of Destination</label>
-  <p>Please select your destination type:</p>
+  <label>Destination type:</label>
   </>
-  <div className='radio1'> 
 
-  <input type="radio" name="destinationType" value="naturalWorld" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label htmlFor="naturalWorld">Natural World</label><br></br>
-  
-  <input type="radio" name="destinationType" value="history" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label htmlFor="history">History</label><br></br>
-
-  <input type="radio" name="destinationType" value="nightlife" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label htmlFor="nightlife">Nightlife</label><br></br>
-
-  <input type="radio" name="destinationType" value="architecture" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label htmlFor='architecture'>Architecture</label><br></br>
-
-  <input type="radio" name="destinationType" value='fun' onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label htmlFor='fun'>Fun Stuff</label><br></br>
-
-  <input type='radio' name='destinationType' value='misc' onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label htmlFor='misc'>Misc.</label>
-
-  </div>
-
+<select id="destinationType" onChange={(e) => setDestinationType(e.target.value)} value={destinationType}>
+<option value="naturalWorld">Natural World</option>
+<option value="history">History</option>
+<option value="nightlife">Nightlife</option>
+<option value="architecture">Architecture</option>
+<option value="fun">Fun Stuff</option>
+<option value="misc">Misc.</option>
+</select>
 
   <div>
 <label>Completed:</label>

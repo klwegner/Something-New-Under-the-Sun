@@ -56,12 +56,23 @@ return(
 
 {/* how to handle submit of this data? */}
 <>
-<label>Category of Destination</label>
-<p>Please select your destination type:</p>
 </>
-<div className='radio1'> 
+<div className="select1">
+<label>Destination Type:</label>
+<select id="destinationType" onChange={(e) => setDestinationType(e.target.value)} value={destinationType}>
+<option value="naturalWorld">Natural World</option>
+<option value="history">History</option>
+<option value="nightlife">Nightlife</option>
+<option value="architecture">Architecture</option>
+<option value="fun">Fun Stuff</option>
+<option value="misc">Misc.</option>
+</select>
+</div>
 
-<input type="radio" name="destinationType" value="naturalWorld" onChange={handleDestinationType}></input>
+
+{/* <div className='radio1'>  */}
+
+{/* <input type="radio" name="destinationType" value="naturalWorld" onChange={handleDestinationType}></input>
 <label htmlFor="naturalWorld">Natural World</label><br></br>
 
 <input type="radio" name="destinationType" value="history" onChange={handleDestinationType}></input>
@@ -77,9 +88,9 @@ return(
 <label htmlFor='fun'>Fun Stuff</label><br></br>
 
 <input type='radio' name='destinationType' value='other' onChange={handleDestinationType}></input>
-<label htmlFor='other'>Other</label>
-
-</div>
+<label htmlFor='other'>Other</label> */}
+{/* 
+</div> */}
 
 {message && (
           <div>
