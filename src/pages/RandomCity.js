@@ -20,7 +20,6 @@ function RandomCity(props) {
           <h2>{randoCity.name}</h2>
           <p>{randoCity.description}</p>
           <MyMapComponent/>
-          <p> Recommendations for destinations in {randoCity.name} by Atlas Obscura:</p>
         </div>
       )}
     </>
