@@ -3,9 +3,6 @@ import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-
-
-
 const API_URL = process.env.REACT_APP_API_URL;
 
 
@@ -38,7 +35,7 @@ useEffect(() => {
         const oneDestination = response.data;
         setName(oneDestination.name);
         setDescription(oneDestination.description);
-        setAddress(oneDestination.usState);
+        setAddress(oneDestination.address);
         setDestinationType(oneDestination.country)
        setDone(oneDestination.done);
       })
