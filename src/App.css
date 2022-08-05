@@ -78,7 +78,7 @@ h1 {
 }
 
 .aboutUsBar {
-  background-color: #DFBB9D;
+  background-color: #F7E2D6;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -498,7 +498,7 @@ margin:0;
   font-size:10vw;
   margin:0;
   padding:0;
-  background-color: #F7E2D6;
+  background-color: transparent;
   text-shadow: -1px 0 #9DD6DF, 0 1px #9DD6DF, 1px 0 #A084CF, 0 -1px #A084CF;
 }
 
