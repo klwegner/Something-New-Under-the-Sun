@@ -1,7 +1,6 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
+import {  useNavigate, useParams } from "react-router-dom";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -63,22 +62,22 @@ return(
 <div className='radio1'> 
 
 <input type="radio" name="destinationType" value="naturalWorld" onChange={handleDestinationType}></input>
-<label for="naturalWorld">Natural World</label><br></br>
+<label htmlFor="naturalWorld">Natural World</label><br></br>
 
 <input type="radio" name="destinationType" value="history" onChange={handleDestinationType}></input>
-<label for="history">History</label><br></br>
+<label htmlFor="history">History</label><br></br>
 
 <input type="radio" name="destinationType" value="nightlife" onChange={handleDestinationType}></input>
-<label for="nightlife">Nightlife</label><br></br>
+<label htmlFor="nightlife">Nightlife</label><br></br>
 
 <input type="radio" name="destinationType" value="architecture" onChange={handleDestinationType}></input>
-<label for='architecture'>Architecture</label><br></br>
+<label htmlFor='architecture'>Architecture</label><br></br>
 
 <input type="radio" name="destinationType" value='fun' onChange={handleDestinationType}></input>
-<label for='fun'>Fun Stuff</label><br></br>
+<label htmlFor='fun'>Fun Stuff</label><br></br>
 
 <input type='radio' name='destinationType' value='other' onChange={handleDestinationType}></input>
-<label for='other'>Other</label>
+<label htmlFor='other'>Other</label>
 
 </div>
 

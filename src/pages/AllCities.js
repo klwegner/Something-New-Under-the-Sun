@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "../components/SearchBar";
 
 const { search } = window.location;
 const query = new URLSearchParams(search).get("s");

@@ -1,4 +1,3 @@
-import { GoogleMap } from "@react-google-maps/api";
 import { useEffect, useState } from "react";
 import MyMapComponent from "../components/MyMapComponent";
 

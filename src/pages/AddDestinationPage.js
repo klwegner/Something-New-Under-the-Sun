@@ -1,11 +1,11 @@
-import { useState, useContext } from "react";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
+// import { useState, useContext } from "react";
+// import axios from "axios";
+// import { Link, useNavigate } from "react-router-dom";
+// import { AuthContext } from "../context/auth.context";
 import AddDestination from "../components/AddDestination";
 import Backpack from '../assets/icons/009-backpack.png'
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
 
 function AddDestinationPage() {
 

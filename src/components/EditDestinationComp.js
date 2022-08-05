@@ -101,22 +101,22 @@ useEffect(() => {
   <div className='radio1'> 
 
   <input type="radio" name="destinationType" value="naturalWorld" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label for="naturalWorld">Natural World</label><br></br>
+  <label htmlFor="naturalWorld">Natural World</label><br></br>
   
   <input type="radio" name="destinationType" value="history" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label for="history">History</label><br></br>
+  <label htmlFor="history">History</label><br></br>
 
   <input type="radio" name="destinationType" value="nightlife" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label for="nightlife">Nightlife</label><br></br>
+  <label htmlFor="nightlife">Nightlife</label><br></br>
 
   <input type="radio" name="destinationType" value="architecture" onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label for='architecture'>Architecture</label><br></br>
+  <label htmlFor='architecture'>Architecture</label><br></br>
 
   <input type="radio" name="destinationType" value='fun' onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label for='fun'>Fun Stuff</label><br></br>
+  <label htmlFor='fun'>Fun Stuff</label><br></br>
 
   <input type='radio' name='destinationType' value='misc' onChange={(e) => setDestinationType(e.target.value)}></input>
-  <label for='misc'>Misc.</label>
+  <label htmlFor='misc'>Misc.</label>
 
   </div>
 
