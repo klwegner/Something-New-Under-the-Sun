@@ -1,6 +1,7 @@
 body {
-  background-color: #DFBB9D;
+  background-color: rgb(252, 248, 232);
   font-family: "Public Sans", sans-serif;
+
 }
 
 input {
@@ -78,11 +79,11 @@ h1 {
 }
 
 .aboutUsBar {
-  background-color: #F7E2D6;
+  background-color: #ECB390;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 3vw;
+  height: 2vw;
 }
 .leftSide {
   display: flex;
@@ -98,7 +99,7 @@ h1 {
 }
 
 .rightSide img {
-  width: 2vw;
+  width: 1.5vw;
   margin: 1% 5%;
 }
 
@@ -109,14 +110,17 @@ h1 {
 }
 
 nav {
-  background-color:#A66CFF;
-
-  margin: 0;
+  background-color:rgb(252, 248, 232);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left:2%;
   align-items: center;
+  height:4vw;
 }
 
-nav img {
-  width: 50px;
+nav h1 {
+  font-size: 4vw;;
 }
 
 .navLinks {
@@ -124,10 +128,18 @@ nav img {
   flex-direction: row;
   justify-content: space-around;
   padding: 0 2%;
+  align-items: center;
+  height:4vw;
 }
 
-.navLinks button {
-    background-color:transparent;
+.navLinks a {
+  margin: 0 2%;
+  text-decoration: none;
+}
+
+.navLinks a:hover {
+  color:black;
+  font-weight: bod;
 }
 
 .titleDiv {
@@ -174,10 +186,11 @@ background-color: #9DD6DF;
 }
 
 .HomePage img {
-  width:34%;
+  width:10%;
   height: auto;
   margin: 1% 33%;
   z-index: 10;
+  background-color: #DFBB9D;
 }
 
 .footer {
@@ -551,40 +564,48 @@ text-align: center;
   display:flex;
   flex-direction: column;
   position: relative;
+  justify-content: center;
 }
 
-.HomePageLoggedOut h1 {
-  z-index: 5;
-  background-color: transparent;
-  font-size: 14vw;
-  margin-top:12%;
-  text-shadow: -3px 0 #9DD6DF, 0 3px #9DD6DF, 3px 0 #A084CF, 0 -3px #A084CF;
-  /* transform: rotate(-45deg); */
+.HomePageLoggedOut img {
+  width: 100%;
+  height: 15vw;
 }
 
-.centeredRow h2 {
+.square {
+  width: 12vw;
+  height: 12vw;
+border: 1px solid black;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.mainPicOverlay {
   font-family: "Reenie Beanie", cursive;
-  font-style: italic;
-  font-size: 4vw;
+  font-size: 5vw;
   z-index: 5;
   text-align: center;
-  margin: 0;
+  width:70%;
+  margin: 0% 15%;
+  top: 4%;
+  position: absolute;
+  color:#ECB390;
   /* text-shadow: -3px 0 #9DD6DF, 0 3px #9DD6DF, 3px 0 #A084CF, 0 -3px #A084CF; */
 
 }
-
+/* 
 .centeredRow2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  margin: 30% 5% 0 5%;
+  margin: 00% 5% 0 5%;
   height:20vw;
-  /* margin-top: 30%; */
   z-index: 11;
   position:absolute;
-}
+} */
 
 .centeredRow2 img{
   width:15vw;
@@ -594,7 +615,10 @@ text-align: center;
 .centeredRow{
 text-align: center;
   width:100%;
-  margin: 0;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .mainPic {
@@ -618,18 +642,17 @@ nav button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width:90%;
-  margin: 5%;
-  margin-top: 10%;
-  background-color:rgba(160, 132, 207, 0.9);
+  width:80%;
+  margin: 5% 10% 0 10%;
+border: 1px solid black;
   border-radius: 10px;
   z-index: 12;
+  /* position:absolute; */
 }
 
 .homePageBlurb h2{
   font-size: 2.5vw;
   margin:1% 10%;
-  text-shadow: -2px 0 #9DD6DF, 0 2px #9DD6DF, 2px 0 #A084CF, 0 -2px #A084CF;
   text-align: center;
 }
 .homePageBlurb p{
@@ -736,10 +759,10 @@ margin-left:10%;
     font-family: "Reenie Beanie", cursive;
   }
 
-  nav button {
+  /* nav button {
     border: none;
     font-size: 3vw;
-  }
+  } */
 
   h3 {
     text-align: center;

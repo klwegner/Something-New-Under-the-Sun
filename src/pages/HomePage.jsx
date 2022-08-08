@@ -1,9 +1,9 @@
 import "../App.css";
 import Earth from "../assets/icons/008-airplane.png";
+import TravelPic from '../assets/travel.png';
 import { AuthContext } from "../context/auth.context.js";
 import { useContext } from "react";
-import Register from "../assets/icons/003-register.png";
-import Login from "../assets/icons/001-login.png";
+import TravelPic2 from '../assets/travel2.png'
 
 import { Link } from "react-router-dom";
 
@@ -13,32 +13,20 @@ function HomePage() {
     <>
       {!isLoggedIn && (
         <>
-          <div className="centeredRow">
-            <h2>There's Always Something New...</h2>
-          </div>
           <div className="HomePageLoggedOut">
-            <h1>
-              <strong>Under the Sun</strong>
-            </h1>
-            <img
-              src={Earth}
-              alt="the Scottish Highlands pic"
-              className="mainPic"
-            />
-            {/* <h1>Seize the Month. The Week. The Day. The Moment.</h1> */}
 
-            <div className="centeredRow2">
-              <Link to={"/signup"}>
-                <button>
-                  <img src={Register} alt="home"></img>
-                </button>
-              </Link>
-              <Link to={"/login"}>
-                <button>
-                  <img src={Login} alt="login"></img>
-                </button>
-              </Link>
-            </div>
+          {/* <img src={TravelPic} alt="oldMapPic"/> */}
+          <img src={TravelPic2} alt="mainPic" />
+            <h2 className="mainPicOverlay">There's Always Something New</h2>
+          
+          <div className="centeredRow">
+
+          <div className="square">List Cities to Visit</div>
+          <div className="square">Add Destinations to See</div>
+          <div className="square">Keep Track of Your Trips</div>
+          <div className="square">Get Inspired</div>
+          <div className="square">Travel On</div>
+          </div>
 
             <div className="homePageBlurb">
               <h2>Step 1: List the places you want to see. </h2>
@@ -56,7 +44,7 @@ function HomePage() {
               <h1>
                 <strong>There's always something new under the sun!</strong>
               </h1>
-              <img src={Earth} alt="the Scottish Highlands pic" />
+              <img src={TravelPic} alt="oldMapPic"/>
               <h1>Seize the Month. The Week. The Day. The Moment.</h1>
             </div>
           </div>
