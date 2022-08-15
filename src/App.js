@@ -49,10 +49,10 @@ function App() {
   return (
     <div className="App">
     <AboutUs />
-    <Title />
+    {/* <Title /> */}
     <Navbar />
       <Routes>
-       <Route path='/' element ={<HomePage />} /> 
+       <Route path='/' element ={<HomePage cities={cities}/>} /> 
        <Route path='/signup' element ={<SignUpPage/>}/>
        <Route path='/login' element ={<LogInPage/>}/>
        <Route path='/profile/:userId' element={<IsPrivate> <UserProfile cities={cities}/> </IsPrivate>}/>

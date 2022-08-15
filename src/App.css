@@ -1,15 +1,17 @@
+/* Need
+margin-top:6vw; */
+
 body {
   background-color: rgb(252, 248, 232);
   font-family: "Public Sans", sans-serif;
-
 }
 
 input {
-  background-color: #F7E2D6;
+  background-color: #f7e2d6;
 }
 
 textarea {
-  background-color: #F7E2D6;
+  background-color: #f7e2d6;
 }
 
 .noBackground {
@@ -24,15 +26,15 @@ textarea {
   justify-content: center;
 }
 
-.basicAdd button{
+.basicAdd button {
   width: 30%;
   margin: 0 35%;
   justify-content: center;
 }
 
-.basicAdd img{
-  width:100%;
-  padding:0;
+.basicAdd img {
+  width: 100%;
+  padding: 0;
   margin: 0 10% 0 0;
 }
 
@@ -44,15 +46,15 @@ textarea {
   justify-content: center;
 }
 
-.basicAdd2 button{
+.basicAdd2 button {
   width: 30%;
   margin: 0 35%;
   justify-content: center;
 }
 
-.basicAdd2 img{
-  width:100%;
-  padding:0;
+.basicAdd2 img {
+  width: 100%;
+  padding: 0;
   margin: 0 10% 0 0;
 }
 
@@ -66,6 +68,11 @@ h1 {
   width: 80%;
   margin: 2% 10%;
   text-align: center;
+  margin-top: 6vw;
+}
+
+.basic h2 {
+  margin-top: 10%;
 }
 
 .basic ul {
@@ -79,12 +86,22 @@ h1 {
 }
 
 .aboutUsBar {
-  background-color: #ECB390;
+  background-color: #ecb390;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 2vw;
+  position: fixed;
+  z-index: 21;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
+
+.aboutUsBar a:hover {
+  font-size: 1.1em;
+}
+
 .leftSide {
   display: flex;
   justify-content: left;
@@ -110,110 +127,132 @@ h1 {
 }
 
 nav {
-  background-color:rgb(252, 248, 232);
+  background-color: rgb(252, 248, 232);
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left:2%;
   align-items: center;
-  height:4vw;
+  height: 4vw;
+  position: fixed;
+  z-index: 20;
+  top: 2vw;
 }
 
 nav h1 {
-  font-size: 4vw;;
+  font-size: 4vw;
+  text-shadow: 1px 1px 2px #cee5d0;
+  margin: 0 0 0 2%;
+  height: 4vw;
 }
 
 .navLinks {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 0 2%;
+  justify-content: space-between;
+  margin-right: 2%;
   align-items: center;
-  height:4vw;
+  height: 4vw;
+  width: 20%;
 }
 
 .navLinks a {
-  margin: 0 2%;
+  margin: 0 5%;
   text-decoration: none;
+  color: #a97155;
 }
 
 .navLinks a:hover {
-  color:black;
-  font-weight: bod;
+  font-size: 1.1em;
+}
+
+.navLinks button {
+  margin: 0%;
+  text-decoration: none;
+  height: 19px;
+  width: 43.66px;
+  font-size: 16px;
+  color: #a97155;
+  font-family: "Public Sans", sans-serif;
+  padding: 0;
+}
+
+.verticalBar {
+  border-left: 1px solid #a97155;
 }
 
 .titleDiv {
-display:flex;
-width:100%;
-height:8vw;
-margin: 0;
-align-items: center;
-justify-content: center;
-background-color: #9DD6DF;
-border-top:0.5vw outset #9DD6DF;
-
+  display: flex;
+  width: 100%;
+  height: 8vw;
+  margin: 6vw 0 0 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.titleDiv h1{
-  text-shadow: -1px 0 #F7E2D6, 0 1px #F7E2D6, 1px 0 #A66CFF, 0 -1px #A66CFF;
-margin:0;
-font-size: 7vw;
-text-align: center;
-background-color: #9DD6DF;
+.titleDiv h1 {
+  text-shadow: 1px 1px 2px #cee5d0;
+  margin: 0;
+  font-size: 7vw;
+  text-align: center;
+  background-color: #9dd6df;
 }
 
-.titleDiv img{
+.titleDiv img {
   width: 75px;
   height: 75px;
- margin:0 2%;
- display:none;
+  margin: 0 2%;
+  display: none;
 }
 
 .HomePage {
-  background-color: #DFBB9D;
+  background-color: #dfbb9d;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   width: 100%;
   margin: 1% 0;
-  position:relative;
+  position: relative;
+  margin-top: 6vw;
 }
 
-.HomePage h1{
-  background-color: #DFBB9D;
-  margin:0;
+.HomePage h1 {
+  background-color: #dfbb9d;
+  margin: 0;
 }
 
 .HomePage img {
-  width:10%;
+  width: 10%;
   height: auto;
   margin: 1% 33%;
   z-index: 10;
-  background-color: #DFBB9D;
+  background-color: #dfbb9d;
 }
 
 .footer {
   display: flex;
   justify-content: space-evenly;
-  background-color: #F7E2D6;
-  border: 0.5vw outset #F7E2D6;
-
-    margin: 0%;
-  width:100%;
+  background-color: #f7e2d6;
+  border: 0.5vw outset #f7e2d6;
+  margin: 0%;
+  width: 100%;
 }
 
-.homePageButtons1{
+footer {
+  margin: 0 0 2% 0;
+}
+
+.homePageButtons1 {
   display: flex;
   justify-content: space-between;
   margin: 0% 3%;
-  width:94%;
-  position:absolute;
-  top:0;
-  left:0;
+  width: 94%;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 2;
 }
-
 
 button {
   padding: 0.5vw 1vw;
@@ -226,8 +265,8 @@ button {
 
 .homePageButtons1 button {
   display: flex;
-  width:125px;
-  padding:0;
+  width: 125px;
+  padding: 0;
   background-color: transparent;
   border: none;
   text-align: center;
@@ -235,19 +274,19 @@ button {
   align-items: center;
 }
 .homePageButtons1 a {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   text-decoration: none;
-  font-size:1.5vw;
-  color:black;
+  font-size: 1.5vw;
+  color: black;
   font-family: "Reenie Beanie", cursive;
 }
 
 .homePageButtons1 img {
   width: 75px;
   margin: 0 10%;
-  padding:0;
+  padding: 0;
 }
 
 .footer button {
@@ -261,13 +300,13 @@ button {
 
 .footer img {
   width: 125px;
-  margin-top:2%;
+  margin-top: 2%;
 }
 
 .footer a {
   text-decoration: none;
-  font-size:2vw;
-  color:black;
+  font-size: 2vw;
+  color: black;
 }
 
 .addCityPage {
@@ -275,6 +314,7 @@ button {
   flex-direction: column;
   width: 80%;
   margin: 0 10%;
+  margin-top: 6vw;
 }
 
 .addCityPage label {
@@ -290,8 +330,8 @@ button {
   font-size: 2vw;
 }
 .radio1 input {
-  margin:0;
-  width:5vw;
+  margin: 0;
+  width: 5vw;
 }
 
 .addCityPage select {
@@ -301,7 +341,7 @@ button {
   font-size: 2vw;
 }
 
-.select1 select{
+.select1 select {
   width: 40%;
   height: 5vw;
   margin: 1vw;
@@ -318,24 +358,24 @@ button {
   padding: 5px;
   width: 26%;
   margin: 2% 37%;
-  background-color: #A66CFF;
+  background-color: #a66cff;
   font-size: 2vw;
-  border-radius:10px;
+  border-radius: 10px;
 }
 
-.cityInfoBtn{
+.cityInfoBtn {
   width: 16%;
   margin: 2% 42%;
-  height:6vw;
-  background-color: #A66CFF;
+  height: 6vw;
+  background-color: #a66cff;
   font-size: 2vw;
-  border-radius:10px;
-  border: 0.5vw inset #A66CFF;
+  border-radius: 10px;
+  border: 0.5vw inset #a66cff;
 }
 
-.cityInfoBtn a{
+.cityInfoBtn a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 .SignUpPage {
@@ -343,12 +383,13 @@ button {
   flex-direction: column;
   width: 80%;
   margin: 0 10%;
+  margin-top: 6vw;
 }
 
 .SignUpPage h1 {
-background-color: transparent;
-font-size:10vw;
-margin:0;
+  background-color: transparent;
+  font-size: 10vw;
+  margin: 0;
 }
 
 .SignUpPage input {
@@ -356,7 +397,7 @@ margin:0;
   height: 4vw;
   margin: 1vw 0;
   font-size: 3vw;
-  background-color: #E4D1B9;
+  background-color: #e4d1b9;
 }
 
 .SignUpPage label {
@@ -370,16 +411,16 @@ margin:0;
   font-size: 3vw;
   border-radius: 10px;
   background-color: rgb(160, 132, 207);
-  width:20%;
-  margin:2% 45% 0 45%;
+  width: 20%;
+  margin: 2% 45% 0 45%;
 }
 
-.SignUpPage p{
+.SignUpPage p {
   text-align: center;
   font-size: 2vw;
 }
 
-.SignUpPage a{
+.SignUpPage a {
   text-align: center;
   font-size: 2vw;
   margin-bottom: 5%;
@@ -411,16 +452,17 @@ margin:0;
 .allCities {
   width: 100%;
   margin: 0;
+  margin-top: 6vw;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
   font-size: 2.2vw;
 }
 
-.pageTop p{
+.pageTop p {
   font-family: "Reenie Beanie", cursive;
   font-size: 12vw;
-  margin: 0 0;
+  margin: 6vw 0 0 0;
 }
 
 .pageTop input {
@@ -435,30 +477,31 @@ margin:0;
   margin: 2vw;
   background-color: rgba(157, 214, 223, 0.8);
   border-radius: 10px;
-  padding:1%;
-  border: 0.5vw outset #9DD6DF;
+  padding: 1%;
+  border: 0.5vw outset #9dd6df;
 }
 
-.oneCity a{
+.oneCity a {
   text-decoration: none;
 }
 
-.oneCity p{
+.oneCity p {
   font-size: 1vw;
 }
 
-.oneCity a:hover{
-  color: #F7E2D6;
+.oneCity a:hover {
+  color: #f7e2d6;
+  font-size: 1.1em;
 }
 .middleOfCityDetails {
   display: flex;
-  width:100%;
+  width: 100%;
 }
 
-.column{
+.column {
   display: flex;
   flex-direction: column;
-  width:100%;
+  width: 100%;
 }
 
 .column h2 {
@@ -468,16 +511,18 @@ margin:0;
 .cityDetails {
   width: 90%;
   margin: 2% 5%;
+  margin-top: 6vw;
   display: flex;
   flex-direction: column;
   font-size: 2vw;
 }
-.cityDetails h1{
-  width:100%;
-  margin:0;
+.cityDetails h1 {
+  width: 100%;
+  margin: 0;
 }
 
-.cityDetails h2, h3{
+.cityDetails h2,
+h3 {
   margin-top: 2%;
 }
 
@@ -499,9 +544,9 @@ margin:0;
   margin: 2% 10%;
 }
 
-.userProfile img{
-  width:70%;
-  height:70%;
+.userProfile img {
+  width: 70%;
+  height: 70%;
 }
 
 .userProfile p {
@@ -510,61 +555,80 @@ margin:0;
 
 .userProfile h1 {
   font-size: 3vw;
-  background-color: #F7E2D6;
-  text-shadow: -1px 0 #E4D1B9, 0 1px #E4D1B9, 1px 0 #A97155, 0 -1px #A97155;
+  background-color: #ecb390;
+  text-shadow: 1px 1px 2px #cee5d0;
 }
 
 .userH {
-  font-size:10vw;
-  margin:0;
-  padding:0;
+  font-size: 10vw;
+  margin: 0;
+  padding: 0;
   background-color: transparent;
-  text-shadow: -1px 0 #9DD6DF, 0 1px #9DD6DF, 1px 0 #A084CF, 0 -1px #A084CF;
+  text-shadow: -1px 0 #94b49f, 0 1px #94b49f, 1px 0 #cee5d0, 0 -1px #cee5d0;
+  margin-top: 6vw;
 }
 
 .userProfileRight {
   display: flex;
   flex-direction: column;
-  width:100%;
+  width: 100%;
 }
 
-.cityList{
+.cityList {
   display: flex;
   flex-direction: column;
   justify-content: center;
- background-color: #9DD6DF;
- border-radius: 10px;
+  background-color: #cee5d0;
+  border-radius: 10px;
 }
 
-.cityList a{
+.cityList a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
-.cityList a:hover{
-  color:#A084CF;
+.cityList a:hover {
+  color: #a084cf;
+  font-size: 1.1em;
 }
 
-.cityList ul{
+.cityList ul {
   font-size: 2vw;
-  padding:0;
+  padding: 0;
 }
-.cityList li{
-text-align: center;
+.cityList li {
+  text-align: center;
   list-style-type: none;
 }
 
 .bottomBorder {
   width: 20%;
-  margin:1% 40%;
-  border-bottom:1px solid #A084CF;
+  margin: 1% 40%;
+  border-bottom: 1px solid #94b49f;
 }
 
-.HomePageLoggedOut{
-  display:flex;
+.HomePageLoggedOut {
+  display: flex;
   flex-direction: column;
   position: relative;
   justify-content: center;
+  margin-top: 6vw;
+}
+
+.top {
+  width: 80%;
+  margin: 1% 10% 10% 10%;
+}
+
+.top h2 {
+  font-size: 4vw;
+  margin: 0;
+}
+
+.top p {
+  font-size: 2vw;
+  margin: 0;
+  text-align: right;
 }
 
 .HomePageLoggedOut img {
@@ -572,13 +636,58 @@ text-align: center;
   height: 15vw;
 }
 
+.randoCityDetails a {
+  text-decoration: none;
+  color: black;
+}
+
+.randoCityDetails a:hover {
+  font-size: 1.1em;
+}
+
 .square {
-  width: 12vw;
+  width: 20%;
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 0px;
+  z-index: 10;
+}
+
+.square a {
+  position: absolute;
+  z-index: 15;
+  color: #ecb390;
+  text-shadow: 1px 1px 2px black;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+.square img {
+  width: 100%;
+  height: 20vw;
+  /* margin: 5%; */
+  position: relative;
+}
+
+.rectangleRow {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 5%;
+  justify-content: space-around;
+}
+
+.rectangle {
+  background-color: rgba(206, 229, 208, 0.7);
+  border-radius: 10px;
+  /* border:1px solid black; */
+  width: 18vw;
   height: 12vw;
-border: 1px solid black;
-display: flex;
-flex-direction: column;
-align-items: center;
+  text-align: center;
 }
 
 .mainPicOverlay {
@@ -586,13 +695,12 @@ align-items: center;
   font-size: 5vw;
   z-index: 5;
   text-align: center;
-  width:70%;
+  width: 70%;
   margin: 0% 15%;
-  top: 4%;
+  top: 10%;
   position: absolute;
-  color:#ECB390;
-  /* text-shadow: -3px 0 #9DD6DF, 0 3px #9DD6DF, 3px 0 #A084CF, 0 -3px #A084CF; */
-
+  color: #ecb390;
+  text-shadow: 1px 1px 2px black;
 }
 /* 
 .centeredRow2 {
@@ -607,27 +715,26 @@ align-items: center;
   position:absolute;
 } */
 
-.centeredRow2 img{
-  width:15vw;
-   }
+.centeredRow2 img {
+  width: 15vw;
+}
 
-
-.centeredRow{
-text-align: center;
-  width:100%;
-  margin-top: 2%;
+.centeredRow {
+  text-align: center;
+  width: 100%;
+  margin-top: 2.5%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .mainPic {
-width:50%;
-margin: 0% 25%;
-border-radius: 50%;
-position:absolute;
-background-color: #9DD6DF ;
-border: 1vw solid #A084CF;
+  width: 50%;
+  margin: 0% 25%;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #9dd6df;
+  border: 1vw solid #a084cf;
 }
 
 nav button {
@@ -639,27 +746,32 @@ nav button {
 }
 
 .homePageBlurb {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width:80%;
-  margin: 5% 10% 0 10%;
-border: 1px solid black;
+  /* display: flex;
+  flex-direction: column; 
+  width: 80%;
+  height: 5vw;
+  margin: 28% 10% 2.5%;
+  background-color: #ecb390;
   border-radius: 10px;
-  z-index: 12;
-  /* position:absolute; */
+  color: #ecb390;
+  text-shadow: 1px 1px 2px #cee5d0;
+  position: absolute;
+  border-top:4vw solid #ECB390;
+  border-bottom:4vw solid #ECB390; */
+
 }
 
-.homePageBlurb h2{
+.homePageBlurb h2 {
   font-size: 2.5vw;
-  margin:1% 10%;
-  text-align: center;
+  text-align: left;
+  color: black;
 }
-.homePageBlurb p{
-  font-family: "Reenie Beanie", cursive;
+.homePageBlurb p {
+  /* font-family: "Reenie Beanie", cursive; */
   font-size: 5vw;
-  margin:2% 5%;
-  text-align: center;
+  margin: 0%;
+  text-align: right;
+  color: black;
 }
 
 .middleOfCityDetails {
@@ -667,24 +779,19 @@ border: 1px solid black;
   border-radius: 10px;
 }
 
-
-.oneDestination{
-display: flex;
-flex-direction: column;
-justify-content: left;
+.oneDestination {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
-.oneDestination li{
+.oneDestination li {
   list-style-type: none;
 }
 
-.oneDestination p{
-margin-left:10%;
-
+.oneDestination p {
+  margin-left: 10%;
 }
-
-
-
 
 @media (min-width: 993px) {
   .HomePage2 {
@@ -697,13 +804,12 @@ margin-left:10%;
     display: none;
   }
 
-
   .HomePage2 {
     width: 90%;
     margin: 5%;
     display: flex;
     flex-direction: column;
-    background-color: #DFBB9D;
+    background-color: #dfbb9d;
   }
 
   .HomePage2 img {
@@ -731,31 +837,31 @@ margin-left:10%;
     width: 25vw;
     height: 15vw;
     border-radius: 10px;
-    background-color: #F7E2D6;
-    border: 0.5vw outset #F7E2D6;
+    background-color: #f7e2d6;
+    border: 0.5vw outset #f7e2d6;
     font-family: "Reenie Beanie", cursive;
   }
-  
-    .homePageButtons2bottom a {
-      text-decoration: none;
-      font-size: 5vw;
-      color:black;
-      font-family: "Reenie Beanie", cursive;
-    }
+
+  .homePageButtons2bottom a {
+    text-decoration: none;
+    font-size: 5vw;
+    color: black;
+    font-family: "Reenie Beanie", cursive;
+  }
 
   .homePageButtons2 button {
     width: 25vw;
     height: 15vw;
     border-radius: 10px;
-    background-color: #F7E2D6;
-    border: 0.5vw outset #F7E2D6;
+    background-color: #f7e2d6;
+    border: 0.5vw outset #f7e2d6;
     font-family: "Reenie Beanie", cursive;
   }
 
   .homePageButtons2 a {
     text-decoration: none;
     font-size: 5vw;
-    color:black;
+    color: black;
     font-family: "Reenie Beanie", cursive;
   }
 
@@ -764,20 +870,29 @@ margin-left:10%;
     font-size: 3vw;
   } */
 
+  nav {
+    top: 4vw;
+  }
+
+  .navLinks {
+    width: 50%;
+    justify-content: flex-end;
+  }
+
   h3 {
     text-align: center;
     font-size: 3vw;
     margin: 0 0 5% 0;
   }
-  
+
   .userProfile h1 {
     font-size: 6vw;
-    background-color:#F7E2D6;
-  } 
+    background-color: #f7e2d6;
+  }
 
-  .userProfile img{
-    width:40%;
-    height:40%;
+  .userProfile img {
+    width: 40%;
+    height: 40%;
     margin: 30% 0;
   }
 
@@ -785,253 +900,313 @@ margin-left:10%;
     display: none;
   }
 
-  .cityList ul{
+  .cityList ul {
     font-size: 5vw;
   }
 
   .rightSide {
     display: none;
-      }
+  }
 
-      .allCities {
-        width:100%;
-        margin:0;
-        font-size: 4vw;
-      }
+  .allCities {
+    width: 100%;
+    margin: 0;
+    font-size: 4vw;
+  }
 
-      .googleMap {
-        width: 90%;
-        height: 80vw;
-        margin: 2% 5%;
-      }
+  .googleMap {
+    width: 90%;
+    height: 80vw;
+    margin: 2% 5%;
+  }
 
-      .cityDetails {
-        width: 90%;
-        margin: 2% 5%;
-        display: flex;
-        flex-direction: column;
-        font-size: 4vw;
-      }
+  .cityDetails {
+    width: 90%;
+    margin: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    font-size: 4vw;
+  }
 
-      .cityDetails h2, h3{
-        margin-top: 3%;
-      }
+  .cityDetails h2,
+  h3 {
+    margin-top: 3%;
+  }
 
-      .middleOfCityDetails {
-        display: flex;
-        flex-direction: column;
-        width:100%;
-      }
+  .middleOfCityDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
-      .HomePage2 h3{
-        font-family: "Reenie Beanie", cursive;
-        font-size: 5vw;
-      }
+  .HomePage2 h3 {
+    font-family: "Reenie Beanie", cursive;
+    font-size: 5vw;
+  }
 
-      .oneCity {
-        width: 25%;
-        margin: 1.5vw;
-      }
+  .oneCity {
+    width: 25%;
+    margin: 1.5vw;
+  }
 
-      .oneCity h3{
-        font-size: 5vw;
-      }
-      
-      .oneCity p{
-        font-size: 4vw;
-      }
+  .oneCity h3 {
+    font-size: 5vw;
+  }
 
-      .pageTop input {
-        width: 70%;
-        margin: 2% 15%;
-        height: 5vw;
-        font-size: 4vw;
-      }
+  .oneCity p {
+    font-size: 4vw;
+  }
 
-      .pageTop p{
-        font-size: 15vw;
-      }
+  .pageTop input {
+    width: 70%;
+    margin: 2% 15%;
+    height: 5vw;
+    font-size: 4vw;
+  }
 
-      .pageTop label{
-        font-size: 4vw;
-      }
+  .pageTop p {
+    font-size: 15vw;
+  }
 
-        .titleDiv img{
-          width: 45px;
-          height: 45px;
-         
-        }
-        
-        .SignUpPage h1 {
-        font-size:10vw;
-        margin:0;
-        }
-        
-        .SignUpPage input {
-          width: 40%;
-          height: 5vw;
-          margin: 1vw 0;
-          font-size: 4vw;
-        }
-        
-        .SignUpPage label {
-          margin-right: 2%;
-          text-align: left;
-          font-size: 5vw;
-        }
-        
-        .SignUpPage button {
-          border: none;
-          font-size: 5vw;
-          border-radius: 10px;
-          background-color: #A66CFF;
-          width:26%;
-          margin:2% 34% 0 34%;
-        }
+  .pageTop label {
+    font-size: 4vw;
+  }
 
-        .SignUpPage p{
-          font-size: 3vw;
-        }
+  .titleDiv img {
+    width: 45px;
+    height: 45px;
+  }
 
-        .SignUpPage a{
-          font-size: 3vw;
-        }
+  .SignUpPage h1 {
+    font-size: 10vw;
+    margin: 0;
+  }
 
-        .addCityPage {
-          display: flex;
-          flex-direction: column;
-          width: 80%;
-          margin: 0 10%;
-        }
-        
-        .addCityPage label {
-      
-          font-size: 4vw;
-        }
-        
-        .addCityPage input {
-          height: 5vw;
-          font-size: 4vw;
-        }
-        .radio1 input {
-          margin:0;
-          width:5vw;
-        }
-        
-        .addCityPage textarea {
-          font-size: 4vw;
-        }
-        
-        .addCityPage button {
-          width: 40%;
-          margin: 5% 30%;
-          background-color: #A66CFF;
-          font-size: 4vw;
-        }
+  .SignUpPage input {
+    width: 40%;
+    height: 5vw;
+    margin: 1vw 0;
+    font-size: 4vw;
+  }
 
-        .radio1 input{
-          margin-right: 2vw;
-        }
+  .SignUpPage label {
+    margin-right: 2%;
+    text-align: left;
+    font-size: 5vw;
+  }
 
-        .basicAdd2{
-          width:90%;
-          margin:0 5%;
-        }
+  .SignUpPage button {
+    border: none;
+    font-size: 5vw;
+    border-radius: 10px;
+    background-color: #a66cff;
+    width: 26%;
+    margin: 2% 34% 0 34%;
+  }
 
-        .basicAdd2{
-          display:flex;
-          flex-direction: column;
-        }
+  .SignUpPage p {
+    font-size: 3vw;
+  }
 
-        .basicAdd2 label {
-          margin:2% 10% 2% 0;
-        }
-        .basicAdd2 input {
-          width: 80%;
-        }
-        .basicAdd2 textarea {
-          width: 80%;
-        }
-        .footer{
-          display: none;
-        }
+  .SignUpPage a {
+    font-size: 3vw;
+  }
 
-        .aboutUsBar {
-          height: 4vw;
-        }
+  .addCityPage {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 10%;
+  }
 
-        .cityInfoBtn{
-          width: 20%;
-          margin: 2% 40%;
-          height:8vw;
-          font-size: 3vw;
-          border-radius:10px;
-        }
-        
-        .HomePageLoggedOut h1 {
-          font-size: 20vw;
-          margin-top:30%;
-        }
-        
-        .centeredRow h2 {
-          background-color: #DFBB9D;
-          font-size: 6vw;
-          z-index: 5;
-        }
-        
-        .centeredRow2 {
-          height:20vw;
-          margin-top: 60%;
+  .addCityPage label {
+    font-size: 4vw;
+  }
 
-        }
+  .addCityPage input {
+    height: 5vw;
+    font-size: 4vw;
+  }
+  .radio1 input {
+    margin: 0;
+    width: 5vw;
+  }
 
-        .centeredRow2 img{
-       width:20vw;
-        }
-        
-        .mainPic {
-        width:70%;
-        margin: 0% 15%;
-        }
+  .addCityPage textarea {
+    font-size: 4vw;
+  }
 
-        .homePageBlurb {
-          width:90%;
+  .addCityPage button {
+    width: 40%;
+    margin: 5% 30%;
+    background-color: #a66cff;
+    font-size: 4vw;
+  }
+
+  .radio1 input {
+    margin-right: 2vw;
+  }
+
+  .basicAdd2 {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .basicAdd2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .basicAdd2 label {
+    margin: 2% 10% 2% 0;
+  }
+  .basicAdd2 input {
+    width: 80%;
+  }
+  .basicAdd2 textarea {
+    width: 80%;
+  }
+  .footer {
+    display: none;
+  }
+
+  .aboutUsBar {
+    height: 4vw;
+  }
+
+  .cityInfoBtn {
+    width: 20%;
+    margin: 2% 40%;
+    height: 8vw;
+    font-size: 3vw;
+    border-radius: 10px;
+  }
+
+  .HomePageLoggedOut h1 {
+    font-size: 20vw;
+    margin-top: 30%;
+  }
+
+  .centeredRow {
+    /* flex-direction: column;
+    justify-content: center; */
+  }
+
+  .square {
+    /* border-radius: 10px; */
+    /* width:50%; */
+    width:100%;
+    height:50vw;
+    /* margin: 5% 25%; */
+    border-radius:0px;
+    background-color: transparent;
+
+  }
+
+  .square a {
+    display: none;
+    font-size: 5vw;
+  }
+
+  .square img {
+    border-radius: 0px;
+    width:100%;
+    height:25vw;
+  }
+
+  .mainPicOverlay {
+    font-size: 8vw;
+    width: 90%;
+    margin: 0% 5%;
+    top: 4%;
+    position: absolute;
+
+  }
+
+
+  .top {
+    width: 96%;
+    margin: 5% 2% 0 2%;
+  }
+  
+  .top h2 {
+    font-size: 8vw;
+    margin: 0;
+    margin-bottom: 2%;
+  }
+  
+  .top p {
+    font-size: 4vw;
+    margin: 0;
+    text-align: right;
+  }
+
+  .centeredRow h2 {
+    background-color: #dfbb9d;
+    font-size: 6vw;
+    z-index: 5;
+  }
+
+  .centeredRow2 {
+    height: 20vw;
+    margin-top: 60%;
+  }
+
+  .centeredRow2 img {
+    width: 20vw;
+  }
+
+  .mainPic {
+    width: 70%;
+    margin: 0% 15%;
+  }
+
+  .homePageBlurb {
+    visibility: none;
+    /* width:90%;
           margin: 5%;
           margin-top: 15%;
           background-color: #A084CF;
-          border-radius: 10px;
-        }
-        
-        
-.homePageBlurb h2{
-  font-size: 6vw;
-  margin:5% 10%;
-  display: none;
-}
+          border-radius: 10px; */
+  }
 
-        .homePageBlurb p{
-          font-size: 5vw;
-          margin:5%;
-        }
+  .homePageBlurb h2 {
+    font-size: 6vw;
+    margin: 5% 10%;
+    display: none;
+  }
 
+  .homePageBlurb p {
+    font-size: 5vw;
+    margin: 5%;
+  }
+
+  .HomePageLoggedOut img {
+    margin-top: 4vw;
+    height: 30vw;
+  }
 }
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
   body {
-
   }
 
-  .cityInfoBtn{
+  .cityInfoBtn {
     width: 40%;
     margin: 5% 30%;
-    height:8vw;
+    height: 8vw;
     font-size: 5vw;
   }
 
   nav {
+    height: 14vw;
+    position: fixed;
+    z-index: 20;
+    top: 2vw;
+
     border: none;
-      padding: 1% 0;
+    padding: 1% 0;
   }
 
   nav h1 {
@@ -1049,6 +1224,11 @@ margin-left:10%;
     height: 10vw;
   }
 
+  .HomePageLoggedOut img {
+    margin-top: 10vw;
+    height: 30vw;
+  }
+
   .HomePage {
     display: none;
   }
@@ -1058,14 +1238,14 @@ margin-left:10%;
     margin: 5%;
     display: flex;
     flex-direction: column;
-    background-color: #DFBB9D;
+    background-color: #dfbb9d;
   }
 
   .HomePage2 img {
     width: 50%;
     margin: 0 25%;
   }
-  .HomePage2 h3{
+  .HomePage2 h3 {
     font-family: "Reenie Beanie", cursive;
     font-size: 11vw;
     margin: 2%;
@@ -1083,8 +1263,8 @@ margin-left:10%;
     width: 30vw;
     height: 20vw;
     border-radius: 10px;
-    background-color: #F7E2D6;
-    border: 0.5vw outset #F7E2D6;
+    background-color: #f7e2d6;
+    border: 0.5vw outset #f7e2d6;
 
     font-family: "Reenie Beanie", cursive;
   }
@@ -1092,7 +1272,7 @@ margin-left:10%;
   .homePageButtons2 a {
     text-decoration: none;
     font-size: 7vw;
-    color:black;
+    color: black;
     font-family: "Reenie Beanie", cursive;
   }
 
@@ -1103,13 +1283,13 @@ margin-left:10%;
     width: 90%;
     margin: 2% 5%;
   }
-  
+
   .homePageButtons2bottom button {
     width: 30vw;
     height: 20vw;
     border-radius: 10px;
-    background-color: #F7E2D6;
-    border: 0.5vw outset #F7E2D6;
+    background-color: #f7e2d6;
+    border: 0.5vw outset #f7e2d6;
 
     font-family: "Reenie Beanie", cursive;
   }
@@ -1117,10 +1297,9 @@ margin-left:10%;
   .homePageButtons2bottom a {
     text-decoration: none;
     font-size: 7vw;
-    color:black;
+    color: black;
     font-family: "Reenie Beanie", cursive;
   }
-
 
   h3 {
     text-align: center;
@@ -1133,15 +1312,15 @@ margin-left:10%;
     width: 80%;
     margin: 2% 10%;
   }
-  
+
   .userProfile h1 {
     font-size: 10vw;
-    background-color: #F7E2D6;
+    background-color: #f7e2d6;
   }
 
-  .userProfile img{
-    width:40%;
-    height:40%;
+  .userProfile img {
+    width: 40%;
+    height: 40%;
     margin: 0 30%;
   }
 
@@ -1149,26 +1328,26 @@ margin-left:10%;
     display: none;
   }
 
-  .cityList ul{
+  .cityList ul {
     font-size: 6vw;
   }
 
   .rightSide {
-display: none;
+    display: none;
   }
 
   .allCities {
-    width:98%;
-    margin:1%;
+    width: 98%;
+    margin: 1%;
     font-size: 8vw;
   }
 
-  .pageTop{
+  .pageTop {
     font-size: 10vw;
     width: 100%;
-    margin:0;
+    margin: 0;
   }
-  .pageTop p{
+  .pageTop p {
     font-size: 20vw;
   }
 
@@ -1179,21 +1358,20 @@ display: none;
     font-size: 6vw;
   }
 
-  .pageTop label{
+  .pageTop label {
     font-size: 6vw;
   }
 
   .oneCity {
-
-  width: 80%;
-  margin: 10%;
+    width: 80%;
+    margin: 10%;
   }
 
-  .oneCity h3{
+  .oneCity h3 {
     font-size: 10vw;
   }
-  
-  .oneCity p{
+
+  .oneCity p {
     font-size: 7vw;
   }
 
@@ -1201,74 +1379,75 @@ display: none;
     width: 90%;
     height: 100vw;
     margin: 2% 5%;
-    border-radius:0;
+    border-radius: 0;
   }
 
-  .cityDetails{
+  .cityDetails {
     font-size: 6vw;
   }
-  .cityDetails h2, h3{
+  .cityDetails h2,
+  h3 {
     margin-top: 3%;
   }
 
   .middleOfCityDetails {
     display: flex;
     flex-direction: column;
-    width:100%;
+    width: 100%;
   }
 
-  .titleDiv{
-    height:14vw;
+  .titleDiv {
+    height: 14vw;
   }
 
-  .titleDiv img{
-display: none;
+  .titleDiv img {
+    display: none;
   }
 
-  .titleDiv h1{
-  font-size: 12vw;
+  .titleDiv h1 {
+    font-size: 12vw;
   }
 
-.footer{
-  display: none;
-}
+  .footer {
+    display: none;
+  }
 
   .SignUpPage {
     width: 90%;
     margin: 0 5%;
   }
-  
+
   .SignUpPage h1 {
-  background-color: #DFBB9D;
-  font-size:15vw;
-  margin:0;
+    background-color: #dfbb9d;
+    font-size: 15vw;
+    margin: 0;
   }
-  
+
   .SignUpPage input {
     width: 70%;
     height: 10vw;
     margin: 1vw 15%;
     font-size: 9vw;
-    background-color: #E4D1B9;
+    background-color: #e4d1b9;
   }
-  
+
   .SignUpPage label {
     font-size: 9vw;
   }
-  
+
   .SignUpPage button {
     font-size: 8vw;
-    width:36%;
-    margin:5% 32% 0 32%;
-    height:12vw;
+    width: 36%;
+    margin: 5% 32% 0 32%;
+    height: 12vw;
   }
 
-  .SignUpPage p{
+  .SignUpPage p {
     font-size: 6vw;
     text-align: center;
   }
 
-  .SignUpPage a{
+  .SignUpPage a {
     font-size: 6vw;
     text-align: center;
     margin-bottom: 5%;
@@ -1279,26 +1458,26 @@ display: none;
     flex-direction: column;
     width: 100%;
   }
-  
+
   .addCityPage label {
     font-size: 6vw;
   }
-  
+
   .addCityPage input {
     width: 70vw;
     height: 7vw;
     font-size: 6vw;
   }
   .radio1 input {
-    margin:0;
-    width:5vw;
+    margin: 0;
+    width: 5vw;
   }
-  
+
   .addCityPage textarea {
     font-size: 6vw;
     width: 70vw;
   }
-  
+
   .addCityPage select {
     width: 25%;
     height: 6vw;
@@ -1307,88 +1486,136 @@ display: none;
   }
 
   .addCityPage button {
-
     width: 40%;
     margin: 5% 30%;
-    background-color: #A66CFF;
+    background-color: #a66cff;
     font-size: 6vw;
   }
 
-  .radio1 input{
+  .radio1 input {
     margin-right: 2vw;
   }
 
-.basicAdd{
-  display:flex;
-  flex-direction: column;
-}
+  .basicAdd {
+    display: flex;
+    flex-direction: column;
+  }
 
-.basicAdd2{
-  display:flex;
-  flex-direction: column;
-}
+  .basicAdd2 {
+    display: flex;
+    flex-direction: column;
+  }
 
-.basicAdd2 label {
-  margin:2% 2% 2% 0;
-}
-.basicAdd2 input {
-  width: 80%;
-  font-size: 6vw;
-}
-.basicAdd2 textarea {
-  width: 80%;
-  font-size: 6vw;
-}
+  .basicAdd2 label {
+    margin: 2% 2% 2% 0;
+  }
+  .basicAdd2 input {
+    width: 80%;
+    font-size: 6vw;
+  }
+  .basicAdd2 textarea {
+    width: 80%;
+    font-size: 6vw;
+  }
 
-.aboutUsBar {
-  height: 8vw;
-}
+  .aboutUsBar {
+    height: 8vw;
+  }
 
-.HomePageLoggedOut h1 {
-  font-size: 20vw;
-  margin-top:50%;
-}
+  .HomePageLoggedOut h1 {
+    font-size: 20vw;
+    margin-top: 50%;
+  }
 
-.centeredRow h2 {
-  background-color: #DFBB9D;
-  font-size: 9vw;
-  z-index: 5;
-  margin-top:2%;
-}
+  .centeredRow h2 {
+    background-color: #dfbb9d;
+    font-size: 9vw;
+    z-index: 5;
+    margin-top: 2%;
+  }
 
-.centeredRow2 {
-  height:20vw;
-  margin-top: 5%;
+  .centeredRow2 {
+    height: 20vw;
+    margin-top: 5%;
+  }
 
-}
+  .centeredRow2 img {
+    width: 20vw;
+  }
 
-.centeredRow2 img{
-width:20vw;
+  .mainPic {
+    width: 90%;
+    margin: 20% 5% 0 5%;
+  }
 
-}
+  .homePageBlurb {
+    visibility: none;
+    width: 90%;
+    margin: 5%;
+    margin-top: 15%;
+    background-color: #a084cf;
+    border-radius: 10px;
+  }
 
-.mainPic {
-width:90%;
-margin: 20% 5% 0 5%;
-}
+  .homePageBlurb h2 {
+    font-size: 6vw;
+    margin: 5% 10%;
+    display: none;
+  }
+  .homePageBlurb p {
+    font-size: 8vw;
+    margin: 5%;
+  }
 
-.homePageBlurb {
-  width:90%;
-  margin: 5%;
-  margin-top: 15%;
-  background-color: #A084CF;
-  border-radius: 10px;
-}
+  .centeredRow {
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.homePageBlurb h2{
-  font-size: 6vw;
-  margin:5% 10%;
-  display: none;
-}
-.homePageBlurb p{
-  font-size: 8vw;
-  margin:5%;
-}
+  .square {
+
+    width:80%;
+    height:50vw;
+    margin: 0% 10%;
+    background-color: transparent;
+
+  }
+
+  .square a {
+    font-size: 10vw;
+  }
+
+  .square img {
+    border-radius: 0px;
+    width:100%;
+    height:50vw;
+  }
+
+  .top {
+    width: 96%;
+    margin: 5% 2% 0 2%;
+  }
+  
+  .top h2 {
+    font-size: 8vw;
+    margin-bottom: 2%;
+  }
+  
+  .top p {
+    font-size: 4vw;
+    margin: 0;
+    text-align: right;
+  }
+
+  .mainPicOverlay {
+    font-size: 8vw;
+    width: 90%;
+    margin: 0% 5%;
+    top: 4.5%;
+    position: absolute;
+
+  }
+
 
 
 }

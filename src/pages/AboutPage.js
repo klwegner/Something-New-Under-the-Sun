@@ -1,10 +1,12 @@
+
+
 function AboutPage() {
     return(
         <div className="basic">
-        <h2>I developed this app as an antidote to my issue of constantly losing my "places to visit" lists in old journals and notes.</h2>
+        <h2>Under the Sun is an antidote to an issue all dreamers face: the scourge of constantly losing new "places to visit" lists in old journals and notes.</h2>
         
-    <p> Instead of letting them sink into obscurity, I wanted a dedicated place to compile information about the places and destinations I'd like to see.</p>
-    <p> Utilizing Google Maps API and my knowledge of React given to me by Ironhack, this app fulfills my needs:</p>
+    <p> Instead of letting those lists sink into obscurity, user can compile information about the places and destinations they'd like to see here.</p>
+    <p> Under the Sun utilizes the Google Maps API and the knowledge of React imparted to <a href='https://klwegner.github.io/kwegnerPortfolio/'>Kristen Wegner</a> by Ironhack. With that, this app:</p>
 <ul>
     <li>Provides a place to list cities to visit</li>
     <li>Provides a way to list desinations to see in each added city</li>

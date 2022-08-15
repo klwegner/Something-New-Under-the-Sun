@@ -36,7 +36,9 @@ function Navbar() {
             <Link to={"/login"}><button><img src={Login} alt='login'></img></button></Link> */}
 
             <Link to='/'>Home</Link>
+
             <Link to={"/signup"}>Signup</Link>
+         
             <Link to={"/login"}>Login</Link>
 
 

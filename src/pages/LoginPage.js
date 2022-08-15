@@ -24,7 +24,6 @@ function LogInPage() {
     axios
       .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
         storeToken(response.data.authToken);
         authenticateUser();       
         navigate("/profile/:userId");
