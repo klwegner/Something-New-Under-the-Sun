@@ -1,9 +1,12 @@
+import oops from '../assets/oops.gif';
+
 function ErrorPage() {
     return(
         <div className="errorPage">
-        <h1>This page does not exist.</h1>
+        <h1>Oops!</h1>
+        <p>This page does not exist</p>
         
-<img src="https://www.leonstransmission.com/wp-content/uploads/2020/06/dangerwillrobinson.gif" alt="danger" />
+<img src={oops} alt="oops" />
 
         </div>
     )

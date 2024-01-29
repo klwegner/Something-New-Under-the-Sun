@@ -4,11 +4,14 @@ import TravelPic from "../assets/travel.png";
 import { AuthContext } from "../context/auth.context.js";
 import { useContext, useEffect, useState } from "react";
 import TravelPic2 from "../assets/travel2.png";
-import City from "../assets/MainPage/City.jpg";
-import Destination from "../assets/MainPage/Destination.jpg";
-import Inspo from "../assets/MainPage/Inspo.jpg";
-import Log from "../assets/MainPage/Log.jpg";
-import Travel from "../assets/MainPage/Travel.jpg";
+// import City from "../assets/MainPage/City.jpg";
+// import Destination from "../assets/MainPage/Destination.jpg";
+// import Inspo from "../assets/MainPage/Inspo.jpg";
+// import Log from "../assets/MainPage/Log.jpg";
+// import Travel from "../assets/MainPage/Travel.jpg";
+// import BootstrapCarousel from "../components/BootstrapCarousel";
+
+
 
 import { Link } from "react-router-dom";
 
@@ -48,7 +51,9 @@ function HomePage(props) {
               <p>See the places and people you want to see!</p>
             </div>
 
-            <div className="centeredRow">
+            {/* <BootstrapCarousel /> */}
+
+            {/* <div className="centeredRow">
               <div className="square">
                 <Link to={"/login"}>For Inspo</Link>
                 <img src={Inspo} alt="travel inspiration" />
@@ -69,7 +74,7 @@ function HomePage(props) {
                 <Link to={"/login"}>For Life</Link>
                 <img src={Travel} alt="Plane in flight" />
               </div>
-            </div>
+            </div> */}
 
             <div className="homePageBlurb"></div>
           </div>

@@ -19,7 +19,7 @@ function RandomCity(props) {
         <div className="cityDetails">
           <h2>{randoCity.name}</h2>
           <p>{randoCity.description}</p>
-          <MyMapComponent/>
+          <MyMapComponent foundCity = {randoCity}/>
         </div>
       )}
     </>

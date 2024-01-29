@@ -20,6 +20,7 @@ function CityInfo(props) {
 
     if (city) {
       setFoundCity(city);
+      // console.log(foundCity)
     }
   }, [cityId, cities]);
 
@@ -31,7 +32,7 @@ function CityInfo(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setDestinations(response.data.Destination);
       })
       .catch((error) => console.log(error));
@@ -97,7 +98,7 @@ function CityInfo(props) {
               </button>
             </div>
 
-            <MyMapComponent />
+            <MyMapComponent foundCity = {foundCity}/>
           </div>
         </div>
       )}

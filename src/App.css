@@ -4,6 +4,7 @@ margin-top:6vw; */
 body {
   background-color: rgb(252, 248, 232);
   font-family: "Public Sans", sans-serif;
+
 }
 
 input {
@@ -93,7 +94,7 @@ h1 {
   height: 2vw;
   position: fixed;
   z-index: 21;
-  top: 0px;
+  bottom: 0px;
   left: 0px;
   width: 100%;
 }
@@ -115,6 +116,10 @@ h1 {
   color: black;
 }
 
+.center{
+  text-align: center;
+}
+
 .rightSide img {
   width: 1.5vw;
   margin: 1% 5%;
@@ -133,10 +138,10 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 4vw;
+  height: 6vw;
   position: fixed;
   z-index: 20;
-  top: 2vw;
+  top:0;
 }
 
 nav h1 {
@@ -429,11 +434,16 @@ button {
 .errorPage {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .errorPage img {
-  width: 50%;
-  margin: 0 25%;
+  width: 30%;
+  margin: 2% 35% 2% 35%;
+}
+
+.errorPage h1{
+  margin-top: 10%;
 }
 
 .pageTop {

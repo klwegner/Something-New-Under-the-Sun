@@ -8,7 +8,7 @@ import travel from '../assets/icons/010-travel.png';
 
 function UserProfile(props) {
     const {isLoggedIn, user } = useContext(AuthContext)
-console.log(user);
+// console.log(user);
 
     return(
 <>
@@ -27,8 +27,10 @@ console.log(user);
 <p>-Lao Tzu</p>
 </div>
 </div>
-
+<div className="center">
 <a href="https://www.flaticon.com/free-icons/travel" title="travel icons">Travel icons created by Eucalyp - Flaticon</a>
+
+</div>
 </>
 )}
 
