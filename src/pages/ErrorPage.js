@@ -1,15 +1,14 @@
-import oops from '../assets/oops.gif';
+import danger from "../assets/danger.gif";
 
 function ErrorPage() {
-    return(
-        <div className="errorPage">
-        <h1>Oops!</h1>
-        <p>This page does not exist</p>
-        
-<img src={oops} alt="oops" />
+  return (
+    <div className="errorPage">
+      <h1>Oops!</h1>
+      <p>This page does not exist</p>
 
-        </div>
-    )
+      <img src={danger} alt="oops" />
+    </div>
+  );
 }
 
 export default ErrorPage;

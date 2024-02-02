@@ -9,18 +9,18 @@ const API_URL = process.env.REACT_APP_API_URL;
 function AddCityPage(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-//   const [location, setLocation] = useState("");
-const [usState, setUsState] = useState("");
-const [country, setCountry] = useState("");
+  //   const [location, setLocation] = useState("");
+  const [usState, setUsState] = useState("");
+  const [country, setCountry] = useState("");
   const [message, setMessage] = useState(null);
 
   const navigate = useNavigate();
 
   const handleName = (e) => setName(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
-//   const handleLocation = (e) => setLocation(e.target.value);
-  const handleUsState= (e) => setUsState(e.target.value);
-  const handleCountry = (e) => setCountry(e.target.value)
+  //   const handleLocation = (e) => setLocation(e.target.value);
+  const handleUsState = (e) => setUsState(e.target.value);
+  const handleCountry = (e) => setCountry(e.target.value);
 
   const handleSubmitCity = (event) => {
     event.preventDefault();
@@ -47,8 +47,6 @@ const [country, setCountry] = useState("");
         <div className="addCityPage">
           <form onSubmit={handleSubmitCity}>
             <div>
-
-            
               <label> Name</label>
               <input
                 type="text"

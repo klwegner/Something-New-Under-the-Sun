@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-// import EditDestinationComp from "../components/EditDestinationComp";
 import MyMapComponent from "../components/MyMapComponent";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -20,9 +19,9 @@ function CityInfo(props) {
 
     if (city) {
       setFoundCity(city);
-      // console.log(foundCity)
+     console.log('a found city ' + foundCity)
     }
-  }, [cityId, cities]);
+  }, [cityId, cities, foundCity]);
 
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
@@ -38,11 +37,16 @@ function CityInfo(props) {
       .catch((error) => console.log(error));
   }, [cityId]);
 
+  setTimeout(()=>{
+console.log('a found city');
+    console.log(JSON.stringify(foundCity));
+  },4000)
+
   return (
     <>
       {foundCity && (
         <div className="cityDetails">
-          <button className='cityInfoBtn'>
+          <button className="cityInfoBtn">
             <Link to={`/cities/${foundCity._id}/edit`}>Edit City</Link>
           </button>
           <h1>{foundCity.name}</h1>
@@ -66,39 +70,50 @@ function CityInfo(props) {
             <div className="column">
               <h2>Destinations in {foundCity.name}</h2>
 
-              {
-                destinations.map((destination) => {
-                  return (
-                    <div key={destination._id} className="oneDestination">
-                      <ul>
-                        <li>
-                          <Link to={`destinations/${destination._id}`}>
-                            <h3>{destination.name}</h3>
-                          </Link>
-                        </li>
 
-                        <p>{destination.description}</p>
-                        <p>Category: {destination.destinationType}</p>
-                        <p> Status:
+              {/* does not include completed info */}
 
-                         {destination.done === true ? (
-           
-              <>{" "}<i>Done. 🎉</i>{" "}</>) : (<> <i> Still to do.</i>{" "}</> )} 
-              </p>
-                      
-                      </ul>
-                      <div className='bottomBorder'></div>
-                    </div>
-                  );
-                })}
+              {destinations.map((destination) => {
+                return (
+                  <div key={destination._id} className="oneDestination">
+                    <ul>
+                      <li>
+                        <Link to={`destinations/${destination._id}`}>
+                          <h3>{destination.name}</h3>
+                        </Link>
+                      </li>
 
-              <button className='cityInfoBtn'><Link to={`/cities/${foundCity._id}/addDestination`}>
-                Add More
-              </Link>
+                      <p>{destination.description}</p>
+                      <p>Category: {destination.destinationType}</p>
+                      <p>
+                        {" "}
+                        Status:
+                        {destination.completed === true ? (
+                          <>
+                            {" "}
+                            <i>Done. 🎉</i>{" "}
+                          </>
+                        ) : (
+                          <>
+                            {" "}
+                            <i> Still to do.</i>{" "}
+                          </>
+                        )}
+                      </p>
+                    </ul>
+                    <div className="bottomBorder"></div>
+                  </div>
+                );
+              })}
+
+              <button className="cityInfoBtn">
+                <Link to={`/cities/${foundCity._id}/addDestination`}>
+                  Add More
+                </Link>
               </button>
             </div>
 
-            <MyMapComponent foundCity = {foundCity}/>
+            <MyMapComponent foundCity={foundCity} />
           </div>
         </div>
       )}

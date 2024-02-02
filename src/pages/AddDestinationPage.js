@@ -3,20 +3,22 @@
 // import { Link, useNavigate } from "react-router-dom";
 // import { AuthContext } from "../context/auth.context";
 import AddDestination from "../components/AddDestination";
-import Backpack from '../assets/icons/009-backpack.png'
+import Backpack from "../assets/icons/009-backpack.png";
 
 // const API_URL = process.env.REACT_APP_API_URL;
 
 function AddDestinationPage() {
-
-return(
-    <><h1 className='noBackground'>Add a Destination</h1>
-    <div className="basicAdd">
-    <AddDestination />
-<div><img src={Backpack} alt='backpack'></img></div>
-</div>
-</>
-)}
-
+  return (
+    <>
+      <h1 className="noBackground">Add a Destination</h1>
+      <div className="basicAdd">
+        <AddDestination />
+        <div>
+          <img src={Backpack} alt="backpack"></img>
+        </div>
+      </div>
+    </>
+  );
+}
 
 export default AddDestinationPage;

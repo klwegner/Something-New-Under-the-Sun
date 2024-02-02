@@ -11,8 +11,6 @@ import TravelPic2 from "../assets/travel2.png";
 // import Travel from "../assets/MainPage/Travel.jpg";
 // import BootstrapCarousel from "../components/BootstrapCarousel";
 
-
-
 import { Link } from "react-router-dom";
 
 function HomePage(props) {
@@ -24,13 +22,13 @@ function HomePage(props) {
   useEffect(() => {
     if (props.cities) {
       setRandoCity1(
-        props.cities[Math.floor(Math.random() * props.cities.length)]
+        props.cities[Math.floor(Math.random() * props.cities.length)],
       );
       setRandoCity2(
-        props.cities[Math.floor(Math.random() * props.cities.length)]
+        props.cities[Math.floor(Math.random() * props.cities.length)],
       );
       setRandoCity3(
-        props.cities[Math.floor(Math.random() * props.cities.length)]
+        props.cities[Math.floor(Math.random() * props.cities.length)],
       );
     }
   }, [props.cities]);
@@ -93,7 +91,11 @@ function HomePage(props) {
               <div className="rectangle">
                 {randoCity1 && (
                   <div className="randoCityDetails">
-                    <h2><Link to={`./cities/${randoCity1._id}`}>{randoCity1.name}</Link></h2>
+                    <h2>
+                      <Link to={`./cities/${randoCity1._id}`}>
+                        {randoCity1.name}
+                      </Link>
+                    </h2>
                     {/* <p>{randoCity1.description}</p> */}
                   </div>
                 )}
@@ -102,7 +104,11 @@ function HomePage(props) {
               <div className="rectangle">
                 {randoCity2 && (
                   <div className="randoCityDetails">
-                    <h2><Link to={`./cities/${randoCity2._id}`}>{randoCity2.name}</Link></h2>
+                    <h2>
+                      <Link to={`./cities/${randoCity2._id}`}>
+                        {randoCity2.name}
+                      </Link>
+                    </h2>
                     {/* <p>{randoCity2.description}</p> */}
                   </div>
                 )}
@@ -111,7 +117,11 @@ function HomePage(props) {
               <div className="rectangle">
                 {randoCity3 && (
                   <div className="randoCityDetails">
-                    <h2><Link to={`./cities/${randoCity3._id}`}>{randoCity3.name}</Link></h2>
+                    <h2>
+                      <Link to={`./cities/${randoCity3._id}`}>
+                        {randoCity3.name}
+                      </Link>
+                    </h2>
                     {/* <p>{randoCity3.description}</p> */}
                   </div>
                 )}

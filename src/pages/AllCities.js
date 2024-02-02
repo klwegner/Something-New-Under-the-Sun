@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const { search } = window.location;
 const query = new URLSearchParams(search).get("s");
 
-
 function AllCities(props) {
   const { cities } = props;
   const [query, setQuery] = useState("");

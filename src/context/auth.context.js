@@ -1,94 +1,91 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 const AuthContext = React.createContext();
 
 function AuthProviderWrapper(props) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
-    const [user, setUser] = useState(null);
-    const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
+  const storeToken = (token) => {
+    localStorage.setItem("authToken", token);
+  };
 
-    const storeToken = (token) => {      
-        localStorage.setItem('authToken', token);
-      }
+  const storedToken = localStorage.getItem("authToken");
 
-      const storedToken = localStorage.getItem('authToken');
+  const authenticateUser = () => {
+    // Get the stored token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
 
+    // If the token exists in the localStorage
+    if (storedToken) {
+      // We must send the JWT token in the request's "Authorization" Headers
+      axios
+        .get(`${API_URL}/auth/verify`, {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        })
+        .then((response) => {
+          // If the server verifies that JWT token is valid
+          const user = response.data;
+          // Update state variables
+          setIsLoggedIn(true);
+          setIsLoading(false);
+          setUser(user);
+        })
+        .catch((error) => {
+          // If the server sends an error response (invalid token)
+          // Update state variables
+          setIsLoggedIn(false);
+          setIsLoading(false);
+          setUser(null);
+        });
+    } else {
+      // If the token is not available (or is removed)
+      setIsLoggedIn(false);
+      setIsLoading(false);
+      setUser(null);
+    }
+  };
 
-      const authenticateUser = () => { 
-        // Get the stored token from the localStorage
-        const storedToken = localStorage.getItem('authToken');
-        
-        // If the token exists in the localStorage
-        if (storedToken) {
-          // We must send the JWT token in the request's "Authorization" Headers
-          axios.get(
-            `${API_URL}/auth/verify`, 
-            { headers: { Authorization: `Bearer ${storedToken}`} }
-          )
-          .then((response) => {
-            // If the server verifies that JWT token is valid  
-            const user = response.data;
-           // Update state variables        
-            setIsLoggedIn(true);
-            setIsLoading(false);
-            setUser(user);        
-          })
-          .catch((error) => {
-            // If the server sends an error response (invalid token) 
-            // Update state variables         
-            setIsLoggedIn(false);
-            setIsLoading(false);
-            setUser(null);        
-          });      
-        } else {
-          // If the token is not available (or is removed)
-            setIsLoggedIn(false);
-            setIsLoading(false);
-            setUser(null);      
-        }   
-      }
-     
+  const removeToken = () => {
+    // <== ADD
+    // Upon logout, remove the token from the localStorage
+    localStorage.removeItem("authToken");
+  };
 
-      const removeToken = () => {                    // <== ADD
-        // Upon logout, remove the token from the localStorage
-        localStorage.removeItem("authToken");
-      }
-     
-     
-      const logOutUser = () => {               
-        console.log('logging out?')  
-        // To log out the user, remove the token
-        removeToken();
-        // and update the state variables    
-        authenticateUser();
-       navigate('/')
-      }  
+  const logOutUser = () => {
+    console.log("logging out?");
+    // To log out the user, remove the token
+    removeToken();
+    // and update the state variables
+    authenticateUser();
+    navigate("/");
+  };
 
-      useEffect(() => {                                    
-        authenticateUser();        
-       }, []);
+  useEffect(() => {
+    authenticateUser();
+  }, []);
 
-    return (
-      <AuthContext.Provider 
-      value={{ 
+  return (
+    <AuthContext.Provider
+      value={{
         storedToken,
         isLoggedIn,
         isLoading,
         user,
         storeToken,
         authenticateUser,
-        logOutUser     
+        logOutUser,
       }}
     >
       {props.children}
     </AuthContext.Provider>
-      )
-    };
+  );
+}
 
-    export { AuthProviderWrapper, AuthContext }
+export { AuthProviderWrapper, AuthContext };

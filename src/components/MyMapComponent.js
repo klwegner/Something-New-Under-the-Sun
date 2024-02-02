@@ -31,15 +31,15 @@ function MyMapComponent({ foundCity }) {
         },
       })
       .then((response) => {
-        console.log("response " + JSON.stringify(response, null, 2));
-        console.log(
-          "here is the lat " + response.data.results[0].geometry.location.lat
-        );
+        // console.log("response " + JSON.stringify(response, null, 2));
+        // console.log(
+        //   "here is the lat " + response.data.results[0].geometry.location.lat
+        // );
         setLng(response.data.results[0].geometry.location.lng);
         setLat(response.data.results[0].geometry.location.lat);
-        console.log(
-          "here is the lat " + response.data.results[0].geometry.location.lng
-        );
+        // console.log(
+        //   "here is the lat " + response.data.results[0].geometry.location.lng
+        // );
       });
   }, [foundCity]);
 

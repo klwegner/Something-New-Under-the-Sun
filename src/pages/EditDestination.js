@@ -1,10 +1,7 @@
 import EditDestinationComp from "../components/EditDestinationComp";
 
 function EditDestination() {
-    return(
-
-<EditDestinationComp />   
- )
+  return <EditDestinationComp />;
 }
 
 export default EditDestination;

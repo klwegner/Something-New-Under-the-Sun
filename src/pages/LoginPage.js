@@ -1,4 +1,4 @@
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
@@ -9,6 +9,7 @@ function LogInPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(undefined);
+  const [loggedInUser, setLoggedInUser] = useState(undefined);
 
   const navigate = useNavigate();
 
@@ -17,34 +18,30 @@ function LogInPage() {
   const handleUsername = (e) => setUsername(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-
-// Assuming you have a `isAuthenticated` state that turns `true` when the user is authenticated
-// const { isAuthenticated } = useContext(AuthContext);
-
+  // Assuming you have a `isAuthenticated` state that turns `true` when the user is authenticated
+  // const { isAuthenticated } = useContext(AuthContext);
 
   const handleSubmitLogin = (e) => {
     e.preventDefault();
     const requestBody = { username, password };
-
-
-    
 
     axios
       .post(`${API_URL}/auth/login`, requestBody)
       .then(async (response) => {
         storeToken(response.data.authToken);
         await authenticateUser();
-        // console.log('I am in the post');
+
+        setLoggedInUser(response.data.user);
         setTimeout(() => {
-          console.log('I am in the setTimeout'+ response.data.userId);
+          console.log("I am in the setTimeout " + response.data.userId);
+          setLoggedInUser(response.data.userId);
           navigate(`/profile/${response.data.userId}`);
-        }, 250); 
+        }, 250);
       })
       .catch((error) => {
         setMessage(error.response.data.message);
       });
   };
-
 
   return (
     <div className="SignUpPage">

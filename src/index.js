@@ -6,10 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthProviderWrapper } from "./context/auth.context"; // <== IMPORT
 
 ReactDOM.render(
-    <BrowserRouter>
+  <BrowserRouter>
     <AuthProviderWrapper>
       <App />
-      </AuthProviderWrapper>
-    </BrowserRouter>,
-  document.getElementById("root")
+    </AuthProviderWrapper>
+  </BrowserRouter>,
+  document.getElementById("root"),
 );
