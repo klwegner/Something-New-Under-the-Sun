@@ -6,30 +6,33 @@ import { AuthContext } from "../context/auth.context";
 const API_URL = process.env.REACT_APP_API_URL;
 
 function EditDestinationComp() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
   const [destinationType, setDestinationType] = useState(null);
-  const [message, setMessage] = useState(undefined);
+  const [message, setMessage] = useState("");
   const [completed, setCompleted] = useState(false);
-
-  const navigate = useNavigate();
   const { cityId, destinationId } = useParams();
   const { storedToken, user } = useContext(AuthContext);
   const userId = user?._id;
 
   useEffect(() => {
     if (userId) {
+      console.log('found a user');
       console.log("destination Id    " + destinationId);
       console.log("city Id    " + cityId);
       console.log("User Id    " + userId);
-      
+      console.log("stored token " + storedToken);
+
       axios
         .get(`${API_URL}/api/destinations/${destinationId}`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         })
         .then((response) => {
           const oneDestination = response.data;
+
+          console.log('here is the destinations api return  '+ oneDestination);
           setName(oneDestination.name);
           setDescription(oneDestination.description);
           setAddress(oneDestination.address);
@@ -38,13 +41,17 @@ function EditDestinationComp() {
         .catch((error) => console.log(error));
 
       axios
-        .get(`${API_URL}/api/user-destination/${userId}/${destinationId}`, {
+        .get(`${API_URL}/api/user-destinations/${userId}/${destinationId}`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         })
         .then((response) => {
-          const UserDestination = response.data;
-          if (UserDestination) {
-            setCompleted(UserDestination.completed);
+          const userDestination = response.data;
+          console.log('got a response from userDestination database  '+ JSON.stringify(userDestination));
+
+          if (userDestination) {
+            setCompleted(userDestination.completed);
+
+            console.log('is the userDestination complete?   '+ userDestination.completed)
           } else {
             console.log("no user destination object yet");
 
@@ -52,14 +59,16 @@ function EditDestinationComp() {
 
             axios
               .post(
-                `${API_URL}/api/user-destination`,
+                `${API_URL}/api/user-destinations`,
                 {
                   userId,
                   destinationId,
-                  completed: false,
+                  completed: false
                 },
-                { headers: { Authorization: `Bearer ${storedToken}` } }
+                { headers: { Authorization: `Bearer ${storedToken}` } },
               )
+
+              //what should I Do with response? I don't think we need to set completed based on response, as the handleCompletedChange does that...
               .then((response) => {
                 const newUserDestination = response.data;
                 setCompleted(newUserDestination.completed);
@@ -82,18 +91,19 @@ function EditDestinationComp() {
     const requestBody = { name, description, address, destinationType };
 
     axios
-      .put(`${API_URL}/api/destinations/${destinationId}`, requestBody, {
+      .put(`${API_URL}/api/destinations/${destinationId}`, requestBody, 
+      {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        console.log("yay!");
+         console.log("destination updated, but not completed status");
       });
 
     const requestBody2 = { completed: completed };
 
     axios
       .put(
-        `${API_URL}/api/user-destination/${userId}/${destinationId}`,
+        `${API_URL}/api/user-destinations/${userId}/${cityId}/${destinationId}`,
         requestBody2,
         {
           headers: { Authorization: `Bearer ${storedToken}` },

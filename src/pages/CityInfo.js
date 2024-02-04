@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import MyMapComponent from "../components/MyMapComponent";
+import { AuthContext } from "../context/auth.context";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -10,37 +11,50 @@ function CityInfo(props) {
   const { cityId } = useParams();
   const [foundCity, setFoundCity] = useState(null);
   const [destinations, setDestinations] = useState([]);
+  const [userDestinations, setUserDestionations] = useState([]);
+  const { storedToken, user } = useContext(AuthContext);
+  const userId = user?._id;
 
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
     const city = cities.find((cityObj) => {
       return cityObj._id === cityId;
     });
-
+  
     if (city) {
       setFoundCity(city);
-     console.log('a found city ' + foundCity)
+      console.log("a found city " + foundCity);
     }
-  }, [cityId, cities, foundCity]);
-
-  useEffect(() => {
-    const storedToken = localStorage.getItem("authToken");
-
+  
     axios
       .get(`${API_URL}/api/cities/${cityId}/destinations`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        // console.log(response.data);
+        console.log(`Response from /api/cities/${cityId}/destinations:  ${response}`);
         setDestinations(response.data.Destination);
+        console.log('set destinations');
+  
+        // Fetch UserDestinations after destinations are fetched
+        return axios.get(`${API_URL}/api/user-destinations/${userId}`, {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        });
       })
-      .catch((error) => console.log(error));
-  }, [cityId]);
-
-  setTimeout(()=>{
-console.log('a found city');
-    console.log(JSON.stringify(foundCity));
-  },4000)
+      .then((response) => {
+        console.log(`Response from /api/user-destination/${userId}:   ${response}`);
+        console.log('set userDestionations');
+        setUserDestionations(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [userId, cityId, cities, foundCity]);
+  
+  
+  // setTimeout(() => {
+  //   console.log("a found city");
+  //   console.log(JSON.stringify(foundCity));
+  // }, 4000);
 
   return (
     <>
@@ -67,13 +81,24 @@ console.log('a found city');
           )}
           <></>
           <div className="middleOfCityDetails">
+
+
+
             <div className="column">
               <h2>Destinations in {foundCity.name}</h2>
 
-
               {/* does not include completed info */}
 
-              {destinations.map((destination) => {
+  {destinations.length > 0 && (
+                destinations.map((destination) => {
+                  const matchingUserDestination = userDestinations.find(
+                    (userDest) => userDest.destinationId === destination._id
+                  );
+
+                  const isCompleted = matchingUserDestination?.completed ?? false;
+
+console.log(destination, matchingUserDestination, isCompleted);
+
                 return (
                   <div key={destination._id} className="oneDestination">
                     <ul>
@@ -88,7 +113,7 @@ console.log('a found city');
                       <p>
                         {" "}
                         Status:
-                        {destination.completed === true ? (
+                        {isCompleted === true ? (
                           <>
                             {" "}
                             <i>Done. 🎉</i>{" "}
@@ -104,7 +129,8 @@ console.log('a found city');
                     <div className="bottomBorder"></div>
                   </div>
                 );
-              })}
+              })
+              )}
 
               <button className="cityInfoBtn">
                 <Link to={`/cities/${foundCity._id}/addDestination`}>

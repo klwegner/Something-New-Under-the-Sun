@@ -1,6 +1,6 @@
 import "../App.css";
-import Earth from "../assets/icons/008-airplane.png";
-import TravelPic from "../assets/travel.png";
+// import Earth from "../assets/icons/008-airplane.png";
+// import TravelPic from "../assets/travel.png";
 import { AuthContext } from "../context/auth.context.js";
 import { useContext, useEffect, useState } from "react";
 import TravelPic2 from "../assets/travel2.png";

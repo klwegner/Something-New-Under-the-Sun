@@ -83,7 +83,7 @@ function EditCity(props) {
       })
       .then((response) => {
         props.refreshCities();
-        navigate("/cities");
+        navigate(`/cities/${cityId}`);
       });
 
     const requestBody2 = { visited: visited };
